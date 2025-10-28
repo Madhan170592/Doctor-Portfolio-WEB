@@ -217,79 +217,78 @@ const Contact = () => {
                 Find Us
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* The New Foscote Hospital */}
-                <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px] flex flex-col">
-                  <iframe
-                    src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, pointerEvents: "none" }}
-                    scrolling="no"
-                    allowFullScreen={false}
-                    loading="lazy"
-                    title="The New Foscote Hospital Map"
-                  />
-                  <div className="bg-white py-3 text-center">
-                    <p
-                      style={{
-                        fontWeight: 300,
-                        color: "#31708F",
-                        fontSize: "20px",
-                      }}
-                    >
-                      {" "}
-                      The New Foscote Hospital
-                    </p>
-                    <p
-                      className="text-xl text-muted-foreground max-w-3xl mx-auto"
-                      style={{
-                        color: "#414141",
-                        fontWeight: 300,
-                        fontSize: "15px",
-                      }}
-                    >
-                      Banbury, United Kingdom
-                    </p>
-                  </div>
-                </div>
+            
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+     {/* The New Foscote Hospital */}
+<div className="rounded-2xl overflow-hidden shadow-2xl h-[500px] flex flex-col">
+  <iframe
+    src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+    width="100%"
+    height="100%"
+    style={{ border: 0, pointerEvents: "none" }}
+    scrolling="no"
+    allowFullScreen={false}
+    loading="lazy"
+    title="The New Foscote Hospital Map"
+  />
+  <div className="bg-white py-3 text-center">
+    <a
+      href="https://thefoscotehospital.co.uk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-lg font-semibold text-[#31708F] hover:underline hover:text-[#25576b] transition-colors"
+    >
+   <p
+        className="text-center "
+        style={{
+          fontWeight: 300,
+          color: "#31708F",
+          fontSize: "17px",
+        }}
+      >
+      The New Foscote Hospital
+      </p>
+    </a>
+    <p className="text-sm text-gray-600">Banbury, United Kingdom</p>
+  </div>
+</div>
 
-                {/* Spire Harpenden Hospital */}
-                <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px] flex flex-col">
-                  <iframe
-                    src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, pointerEvents: "none" }}
-                    scrolling="no"
-                    allowFullScreen={false}
-                    loading="lazy"
-                    title="Spire Harpenden Hospital Map"
-                  />
-                  <div className="bg-white py-3 text-center">
-                    <p
-                      style={{
-                        fontWeight: 300,
-                        color: "#31708F",
-                        fontSize: "20px",
-                      }}
-                    >
-                      {" "}
-                      Spire Harpenden Hospital
-                    </p>
-                    <p
-                      className="text-xl text-muted-foreground max-w-3xl mx-auto "
-                      style={{
-                        color: "#414141",
-                        fontWeight: 300,
-                        fontSize: "15px",
-                      }}
-                    >
-                      Harpenden, United Kingdom
-                    </p>
-                  </div>
-                </div>
-              </div>
+
+        {/* Spire Harpenden Hospital */}
+      <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px] flex flex-col">
+  <iframe
+    src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+    width="100%"
+    height="100%"
+    style={{ border: 0, pointerEvents: "none" }}
+    scrolling="no"
+    allowFullScreen={false}
+    loading="lazy"
+    title="Spire Harpenden Hospital Map"
+  />
+  <div className="bg-white py-3 text-center">
+    <a
+      href="https://www.spirehealthcare.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-lg font-semibold text-[#31708F] hover:underline hover:text-[#25576b] transition-colors"
+    >
+  <p
+        className="text-center "
+        style={{
+          fontWeight: 300,
+          color: "#31708F",
+          fontSize: "17px",
+        }}
+      >
+      Spire Harpenden Hospital
+      </p>
+    </a>
+    <p className="text-sm text-gray-600">Harpenden, United Kingdom</p>
+  </div>
+</div>
+
+      </div>
             </div>
           </div>
         </section>
