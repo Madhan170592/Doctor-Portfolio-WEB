@@ -1,0 +1,602 @@
+import { useState } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { FileText, BookOpen, Award, Bold } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
+const Publications = () => {
+  const chapters = [
+    {
+      title: 'Bailey and Love - 28th Edition (2023)',
+      chapter: 'Chapter 7: Basic Surgical Skills',
+      authors: 'Joshua Franklyn and Mark Coleman',
+    },
+    {
+      title: 'Communication Skills for Surgeons, Patel & Rane Springer Nature (2023)',
+      chapter: 'Chapter: Trainer-trainee relationship',
+      authors: 'Joshua Franklyn, Tom Cecil and Mark Coleman',
+    },
+    {
+      title: 'Bailey and Love - 29th Edition (2025)',
+      chapter: 'Basic Surgical Skills',
+      authors: 'Edited by Ronan Connell and Rob Sayers',
+      status: 'In Press',
+    },
+    {
+      title: 'Tips and Tricks in Minimally Invasive Surgery (TATMIS)',
+      chapter: 'Robotic Left hemicolectomy, Sigmoid colectomy and Hartmann\'s procedure',
+      authors: 'Edited by S. Aroori',
+      status: 'Commissioned',
+    },
+  ];
+
+  // const papers = [
+  //   {
+  //     title: 'Training the trainees in robotic surgery - a pilot scheme in the United Kingdom',
+  //     journal: 'BMC Medical Education',
+  //     date: 'April 2025',
+  //     authors: 'Mohammed Al-Ani, Joshua Franklyn, Vanash Patel',
+  //   },
+  //   {
+  //     title: 'Transitioning to da Vinci Xi for colorectal cancer surgery: a prospective cohort study of 102 cases',
+  //     journal: 'Journal of Robot Surgery',
+  //     date: 'September 2025',
+  //     authors: 'Samuel Massias, J Franklyn, Vanash Patel',
+  //   },
+  //   {
+  //     title: 'Long-term mental and physical quality of life outcomes following ileal pouch anal anastomosis surgery',
+  //     journal: 'Annals of the Royal College of Surgeons',
+  //     date: 'January 2025',
+  //     impactFactor: '1.2',
+  //     pmid: '38362797',
+  //   },
+  //   {
+  //     title: 'Immersive robotic colorectal training in the United Kingdom is safe and efficient',
+  //     journal: 'Annals of the Royal College of Surgeons',
+  //     date: 'December 2024',
+  //     impactFactor: '1.9',
+  //     authors: 'J Franklyn, S. Holtham, G. Farook',
+  //   },
+  //   {
+  //     title: 'Addressing mental and physical fatigue in major abdominal surgery by incorporating muscle stretches and hydration mini breaks',
+  //     journal: 'Annals of the Royal College of Surgeons',
+  //     date: 'January 2025',
+  //     impactFactor: '1.9',
+  //     authors: 'J. Franklyn, Brendan Moran, Tom. Cecil',
+  //   },
+  //   {
+  //     title: 'Colon cancer survival in the elderly without curative surgery',
+  //     journal: 'Annals of the Royal College of Surgeons',
+  //     date: 'September 2024',
+  //     impactFactor: '1.9',
+  //     pmid: '38404248',
+  //     authors: 'J Franklyn, I. Lindsey',
+  //   },
+  //   {
+  //     title: 'Geographical variations in long term colorectal cancer outcomes in England',
+  //     journal: 'Surgical Endoscopy',
+  //     date: 'March 2023',
+  //     impactFactor: '4.6',
+  //     pmid: '36991267',
+  //     authors: 'J Franklyn, Mark Coleman, Sebastian Smolarek',
+  //   },
+  //   {
+  //     title: 'Colorectal cancer outcomes determined by mode of presentation: analysis of population data in England',
+  //     journal: 'Techniques in Coloproctology',
+  //     date: 'January 2022',
+  //     impactFactor: '3.78',
+  //     pmid: '35084620',
+  //     authors: 'J Franklyn, J Lomax, P Labib, A Baker, J Hosking, B Moran, S Smolarek',
+  //   },
+  //   {
+  //     title: 'Abdominal wall reconstruction with tissue-engineered mesh using Muscle-Derived stem cells',
+  //     journal: 'Regenerative Engineering and Translational Medicine',
+  //     date: 'April 2022',
+  //     impactFactor: '2.2',
+  //     doi: '10.1007/s40883-022-00253-2',
+  //     authors: 'Joshua Franklyn, Sowmya Rames, Vrisha Madhuri, Inian Samarasam',
+  //   },
+  //   {
+  //     title: 'Young onset colorectal cancer: Insights based on a population-based study from England',
+  //     journal: 'Colorectal Disease',
+  //     date: 'April 2022',
+  //     impactFactor: '3.78',
+  //     pmid: '35437885',
+  //   },
+  // ];
+
+
+    const peerReviewed = [
+    {
+      title:
+        "Training the trainees in robotic surgery - a pilot scheme in the United Kingdom",
+      journal: "BMC Medical Education, Apr 2025",
+      authors: "Mohammed Al-Ani, Joshua Franklyn, Vanash Patel",
+      links: [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=Al-Ani+M&cauthor_id=40781714",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=Franklyn+J&cauthor_id=40781714",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=Patel+V&cauthor_id=40781714",
+      ],
+    },
+    {
+      title:
+        "Transitioning to da Vinci Xi for colorectal cancer surgery: a prospective cohort study of 102 cases from a UK centre with a structured robotic programme",
+      journal: "Journal of Robotic Surgery, Sep 2025",
+      authors: "Samuel Massias, J Franklyn and Vanash Patel",
+    },
+    {
+      title:
+        "Long-term mental and physical quality of life outcomes following ileal pouch anal anastomosis surgery",
+      journal: "Annals of RCS, Jan 2025 (Impact factor 1.2)",
+      pmid: "38362797",
+    },
+    {
+      title:
+        "Immersive robotic colorectal training in the UK is safe and efficient",
+      journal:
+        "Annals of the Royal College of Surgeons RCSJ-2024-0374.R1 (Impact factor 1.9) Dec 2024 ",
+      authors: "J Franklyn, S Holtham and G Farook",
+    },
+    {
+      title:
+        "Training the trainees in robotic surgery - a pilot scheme in the United Kingdom",
+      journal: "BMC Med education : August 2025 ",
+      authors: "Mohamed Al Ani, Joshua Franklyn and Vanash Patel",
+    },
+    {
+      title:
+        "Addressing mental and physical fatigue in major abdominal surgery by incorporating muscle stretches and hydration mini breaks",
+      journal:
+        "Annals of the Royal College of Surgeons RCSJ-2024-0427.R1 (Impact factor 1.9) Jan 2025 ",
+      authors: "J Franklyn, Brendan Moran and Tom. Cecil",
+    },
+    {
+      title: "Colon cancer survival in the elderly without curative surgery",
+      journal:
+        "Annals of the Royal College of Surgeons, Sep 2024 (Impact factor 1.9)",
+      authors: "J Franklyn, I Lindsey",
+      pmid: "38404248",
+    },
+    {
+      title:
+        "Geographical variations in long term colorectal cancer outcomes in England: a contemporary population analysis revealing the north-south divide in colorectal cancer survival.",
+      journal: "Surgical Endoscopy, Mar 2023 (Impact factor 4.6)",
+      authors: "J Franklyn, Mark Coleman, Sebastian Smolarek",
+      pmid: "36991267",
+    },
+    {
+      title:
+        "Colorectal cancer outcomes determined by mode of presentation: analysis of population data in England between 2010 and 2014",
+      journal: "Techniques in Coloproctology, Jan 2022 (Impact factor 3.78)",
+      authors:
+        "J Franklyn, J Lomax, P. Labib, A. Baker, J Hosking, B Moran, S Smolarek",
+      pmid: "35084620",
+    },
+    {
+      title:
+        "Abdominal wall reconstruction with tissue-engineered mesh using Muscle-Derived stem cells in an Animal model",
+      journal:
+        "Regenerative Engineering and Translational Medicine, Apr 2022 (Impact factor 2.2)",
+      authors: "Joshua Franklyn, Sowmya Rames, Vrisha Madhuri, Inian Samarasam",
+      doi: "10.1007/s40883-022-00253-2",
+    },
+    {
+      title:
+        "Young onset colorectal cancer: Insights based on a population-based study from England",
+      journal: "Colorectal Disease, Apr 2022 (Impact factor 3.78)",
+      authors:
+        "J Franklyn, J Lomax, P Labib, M Abdalkoddus, A Baker, J Hosking, S Smolarek",
+      pmid: "35437885",
+    },
+    {
+      title:
+        "Delayed cholecystectomy following Endoscopic Retrograde Cholangio-Pancreatography is not associated with worse surgical outcomes.",
+      journal: "Surgical Endoscopy, Jul 2021 (Impact factor 4.6)",
+      authors:
+        "Muhammed Abdalkoddus, Joshua Franklyn, Rashid Ibrahim, Nur Zainuddin, Lucy Yao, Somaiah Aroori",
+      pmid: "34231064",
+    },
+    {
+      title:
+        "A surgical ward round proforma can improve documentation and efficiency of ward rounds",
+      journal:
+        "BMJ Post Graduate Medical Journal, Dec 2020 (Impact factor 2.4)",
+      authors:
+        "Dominic Dewson, Victoria Eves, Joshua Franklyn, Sebastian Smolarek",
+      pmid: "33361416",
+    },
+    {
+      title:
+        "Prognosis of non-operative management of non-metastatic colorectal cancer in octo/nonagenarians",
+      journal:
+        "Annals of the Royal College of Surgeons, Sep 2020 (Impact factor 1.2)",
+      authors:
+        "Franklyn J, Abdalkuddos M, Demitra Limnantitou, Rossi B, Smolarek S",
+      pmid: "32799666",
+    },
+    {
+      title:
+        "Prospective randomised controlled trial comparing early post-operative complications in patients undergoing loop colostomy with and without a stoma rod",
+      journal: "Colorectal Disease, Jul 2017 (Impact factor 3.8)",
+      authors:
+        "Franklyn J, Varghese G, Mittal R, Rebekah G, Jesudason MR, Perakath B",
+      pmid: "28067986",
+    },
+    {
+      title:
+        "Oncological outcomes of Obstructed locally advanced rectal cancer in a tertiary care Indian hospital. ",
+      journal: "       International Surgery journal Volume 6 No. 11 Nov 2018",
+      authors:
+        "Joshua Franklyn, Gigi Varghese, Rajat Raghunath, Tunny Sebastian, Mark Ranjan Jesudason",
+    },
+    {
+      title:
+        "Oral verrucous carcinoma: ten-year experience from a tertiary care hospital in India.",
+      journal:
+        "Indian Journal of Medical and Pediatric Oncology, Dec 2017 (Impact factor 0.2)",
+      authors:
+        "Joshua Franklyn, Rajinikanth Janakiraman, Amit J Tirkey, Cecil Thankachan, John Muthusami",
+      pmid: "29333011",
+    },
+    {
+      title:
+        "Parotid abscess – clinical analysis of 40 cases in a tertiary Indian hospital.",
+      journal:
+        "Journal of Oral and Maxillofacial Surgery, Medicine, and Pathology, May 2017",
+      authors:
+        "Joshua Franklyn, Pranay Gaikwad, Emmanuel Lazarus, Alen Thomas, John Muthusami",
+      links: [
+        "https://www.sciencedirect.com/science/article/abs/pii/S221255581630151X",
+        "https://www.sciencedirect.com/science/article/abs/pii/S221255581630151X",
+        "https://www.sciencedirect.com/science/article/abs/pii/S221255581630151X",
+        "https://www.sciencedirect.com/science/article/abs/pii/S221255581630151X",
+        "https://www.sciencedirect.com/science/article/abs/pii/S221255581630151X",
+      ],
+    },
+    {
+      title:
+        "Malignant Peripheral Nerve Sheath Tumour of the Small Bowel Presenting with Intussusception and Perforation: a Double Jeopardy? ",
+      journal: "Indian J Surg Oncology June 2017 (Impact factor 0.16)",
+      authors:
+        "Ananth P Abraham, Joshua Franklyn, Jagan Chandramohan, Pranay Gaikwad, John Chandrakumar Muthusami",
+      pmid: "28546722",
+    },
+    {
+      title:
+        "Demographics and outcomes of surgically treated right sided colon cancer in India: 9 year single institution experience",
+      journal: "Tropical Gastroenterology, 2016",
+      authors:
+        "Joshua Franklyn, Rohin Mittal, Tunny Sebastian, Benjamin Perakath",
+      pmid: "29668177",
+    },
+    {
+      title:
+        "Operable carcinoma stomach – Demographics, survival and outcomes. An analysis of 427 patients in a tertiary care Indian hospital.",
+      journal: "Journal of Gastric Cancer, Mar 2017 (Impact factor 0.81)",
+      authors:
+        "Joshua Franklyn, Sam V. George, Myla Yacob, Vijay Abraham, Sudhakar Chandran, Tunny Sebastian, Inian Samarasam",
+      pmid: "2833764",
+    },
+    {
+      title:
+        "Disseminated echinococcosis of the lung and central compartment of the neck",
+      journal: "World Journal of Endocrine Surgery, Jan–Apr 2013; 5(1): 25–27",
+      authors:
+        "Nischal Pandya, MJ Paul, Lalit Choudhry, Birla Roy Gnanamuthu, Kochu Krishnan, Joshua Franklyn, Jyoti Prasad Kalita",
+    },
+  ];
+
+
+  return (
+    <main className="min-h-screen pt-24 pb-16 bg-[#FAF9F7] mt-8">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <section className="mb-16 text-center">
+   <p
+            style={{
+              fontWeight: 300,
+              color: "#31708F",
+              fontSize: "28px",
+
+            }}
+          >            Research & Publications
+          </p>
+  <p
+            className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
+            style={{ color: "#414141",fontWeight:300,fontSize:'20px' }}
+          >            Contributions to surgical literature and medical education
+          </p>
+        </section>
+
+        {/* Stats */}
+        {/* <section className="mb-16">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="glass-card text-center">
+              <CardContent className="pt-8 pb-8">
+                <div className="text-4xl font-bold text-secondary mb-2">21+</div>
+                <p className="text-muted-foreground">Peer-Reviewed Papers</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardContent className="pt-8 pb-8">
+                <div className="text-4xl font-bold text-secondary mb-2">4</div>
+                <p className="text-muted-foreground">Book Chapters</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardContent className="pt-8 pb-8">
+                <div className="text-4xl font-bold text-secondary mb-2">4.6</div>
+                <p className="text-muted-foreground">Highest Impact Factor</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section> */}
+
+        {/* Tabs for different publication types */}
+        <Tabs defaultValue="papers" className="w-full">
+           <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12">
+    <TabsTrigger value="papers">
+      <FileText className="mr-2 h-4 w-4" />
+      Papers
+    </TabsTrigger>
+    <TabsTrigger value="chapters">
+      <BookOpen className="mr-2 h-4 w-4" />
+      Chapters
+    </TabsTrigger>
+  </TabsList>
+
+<TabsContent value="papers">
+  <div className="max-w-4xl mx-auto space-y-6">
+    {peerReviewed.map((paper, index) => (
+      <Card
+        key={index}
+        className="glass-card hover-lift"
+        style={{ backgroundColor: "#FAF9F7" }}
+      >
+        <CardContent className="p-6">
+          <div className="flex items-start justify-between">
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                {paper.title}
+              </h3>
+              <p className="text-muted-foreground mb-2">{paper.journal}</p>
+
+             {paper.authors && (
+  <h3
+    style={{
+      fontWeight: 'bold',
+      fontSize: "17px",
+      color: "#612512",
+      lineHeight: "1.6",
+    }}
+  >    <strong>Authors:</strong>{" "}
+    {paper.authors
+      .split(",")
+      .map((author, idx, arr) => {
+        const trimmedAuthor = author.trim();
+
+        // Match all variations of Joshua Franklyn
+        const isFranklyn =
+          /^(j(\.?|oshua)?\sfranklyn|franklyn\sj\.?)$/i.test(trimmedAuthor);
+
+        const authorElement = isFranklyn ? <strong>{trimmedAuthor}</strong> : trimmedAuthor;
+
+        if (paper.links && paper.links[idx]) {
+          return (
+        <a
+  key={idx}
+  href={paper.links[idx]}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    color: "#612512",
+    textDecoration: "underline",
+    fontWeight: isFranklyn ? "bold" : "normal",
+  }}
+  className="hover:text-[#245b6b] mr-1"
+>
+  {authorElement}
+  {idx < arr.length - 1 ? "," : ""}
+</a>
+
+          );
+        } else {
+          return (
+            <span key={idx} className="mr-1">
+              {authorElement}
+              {idx < arr.length - 1 ? "," : ""}
+            </span>
+          );
+        }
+      })}
+  </h3>
+)}
+
+            </div>
+
+            {/* {(paper.pmid || paper.doi) && (
+              <div className="flex flex-col gap-1 text-sm">
+                {paper.pmid && (
+                  <a
+                    href={`https://pubmed.ncbi.nlm.nih.gov/${paper.pmid}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center"
+                  >
+                    PMID: {paper.pmid}
+                  </a>
+                )}
+                {paper.doi && (
+                  <a
+                    href={`https://doi.org/${paper.doi}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center"
+                  >
+                    DOI: {paper.doi}
+                  </a>
+                )}
+              </div>
+            )} */}
+
+            
+         {(paper.pmid || paper.doi) && (
+  <div className="flex flex-col gap-1 text-sm">
+    {paper.pmid && (
+      <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center">
+        PMID: {paper.pmid}
+      </span>
+    )}
+    {paper.doi && (
+      <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center">
+        DOI: {paper.doi}
+      </span>
+    )}
+  </div>
+)}
+
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</TabsContent>
+
+
+
+
+
+          <TabsContent value="chapters">
+            <div className="max-w-4xl mx-auto space-y-6">
+              {chapters.map((chapter, index) => (
+                <Card key={index} className="glass-card hover-lift"
+                  style={{ backgroundColor: "#FAF9F7" }}
+>
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+   <h2
+                  
+                    className="text-xs font-medium text-secondary uppercase tracking-wide"
+                    style={{ fontSize: "17px", fontWeight: "bold" }}
+                  >                          {chapter.title}
+                        </h2>
+                        <p className="text-muted-foreground mb-2">
+                          {chapter.chapter}
+                        </p>
+  <h3
+    style={{
+      fontWeight: 100,
+      fontSize: "17px",
+      color: "#612512",
+      lineHeight: "1.6",
+    }}
+  >                          <span className="font-medium">Authors:</span> {chapter.authors}
+                        </h3>
+                      </div>
+                      {chapter.status && (
+                        <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
+                          {chapter.status}
+                        </span>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+         <TabsContent value="papers">
+  <div className="max-w-4xl mx-auto space-y-6">
+    {peerReviewed.map((paper, index) => (
+      <Card
+        key={index}
+        className="glass-card hover-lift"
+        style={{ backgroundColor: "#FAF9F7" }}
+      >
+        <CardContent className="p-6">
+          <div className="flex items-start justify-between">
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                {paper.title}
+              </h3>
+              <p className="text-muted-foreground mb-2">{paper.journal}</p>
+
+              {paper.authors && (
+                
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-medium">Authors:</span>{" "}
+                  {paper.links && paper.links.length > 0
+                    ? paper.authors.split(", ").map((author, idx) => {
+                        const link = paper.links[idx];
+                        const isFranklyn =
+                          author.includes("Joshua Franklyn") ||
+                          author.includes("Franklyn J") ||
+                          author.includes("J Franklyn");
+
+                        const authorText = isFranklyn ? (
+                          
+                          <strong>{author}</strong>
+                        ) : (
+                          author
+                        );
+
+                        return link ? (
+                          <a
+                            key={idx}
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-secondary underline hover:text-navy mr-1"
+                          >
+                            {authorText}
+                          </a>
+                        ) : (
+                          <span key={idx} className="mr-1">
+                            {authorText}
+                          </span>
+                        );
+                      })
+                    : paper.authors}
+                </p>
+              )}
+            </div>
+
+            {(paper.pmid || paper.doi) && (
+              <div className="flex flex-col gap-1 text-sm">
+                {paper.pmid && (
+                  <a
+                    href={`https://pubmed.ncbi.nlm.nih.gov/${paper.pmid}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center"
+                  >
+                    PMID: {paper.pmid}
+                  </a>
+                )}
+                {paper.doi && (
+                  <a
+                    href={`https://doi.org/${paper.doi}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center"
+                  >
+                    DOI: {paper.doi}
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</TabsContent>
+
+        </Tabs>
+      </div>
+    </main>
+  );
+};
+
+export default Publications;
