@@ -126,7 +126,7 @@ const Home = () => {
                     // style={{ fontWeight: 100 }}
                   >
                     <Button
-                      className="bg-[#31708F] hover:bg-[#717171] text-white px-8 py-6 text-base w-[220px]"
+  className="bg-[#31708F] hover:bg-[#717171] text-white px-8 py-6 text-base w-[220px] mb-6 sm:mb-0"
                       style={{ fontFamily: '"Montserrat", sans-serif' }}
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)} // 👈 This line enables the dropdown toggle
                     >

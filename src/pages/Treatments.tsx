@@ -73,8 +73,11 @@ const Treatments = () => {
   ];
 
   return (
-    <main className="min-h-screen pt-24 pb-16 bg-[#FAF9F7]">
-      <div className="container mx-auto px-40">
+    // <main className="min-h-screen pt-24 pb-16 bg-[#FAF9F7]">
+    //   <div className="container mx-auto px-40">
+        <main className="min-h-screen pt-20 pb-16 bg-[#FAF9F7]">
+  <div className="container mx-auto px-6 sm:px-12 md:px-24 lg:px-40">
+
         {/* Header */}
         <section className="mb-16 text-center mt-8">
           <p
@@ -95,7 +98,9 @@ const Treatments = () => {
         </section>
 
         {/* Treatments Grid */}
-        <section className="grid grid-cols-2 gap-6 max-w-[1200px] mx-auto">
+        {/* <section className="grid grid-cols-2 gap-6 max-w-[1200px] mx-auto"> */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto">
+
           {treatments.map((treatment) => (
             <Card
               key={treatment.id}
