@@ -9,7 +9,7 @@ const Treatments = () => {
       category: "Advanced Surgical Techniques",
       shortDesc:
         "State-of-the-art keyhole surgical techniques for bowel conditions with minimal pain and faster recovery.",
-        fullDesc: `
+      fullDesc: `
     I use the latest <span class="font-bold">keyhole surgical techniques</span> to treat many <span class="font-bold">bowel conditions</span>. 
     This type of surgery is <span class="font-bold">less painful</span>, usually means a <span class="font-bold">shorter stay in hospital</span>, 
     a <span class="font-bold">quicker recovery</span>, and leaves <span class="font-bold">smaller scars</span> compared with traditional open surgery.
@@ -20,7 +20,8 @@ const Treatments = () => {
 
     My aim is always to use the <span class="font-bold">safest and most effective approach</span> to get you back to health 
     as <span class="font-bold">quickly and comfortably</span> as possible.
-  `,    },
+  `,
+    },
     {
       id: "hernia",
       title: "Hernia Repair",
@@ -35,39 +36,40 @@ const Treatments = () => {
       category: "Specialized Treatment",
       shortDesc:
         "Compassionate treatment for haemorrhoids, fissures, fistulas, and pilonidal disease.",
-     fullDesc: {
-  paragraphs: [
-    `Problems affecting the <span class="font-bold">bottom</span> can be painful, disruptive, and sometimes difficult to talk about. These conditions are very common, and seeking <span class="font-bold">specialist care</span> can make a big difference to your comfort and quality of life.`,
-    `I offer <span class="font-bold">personalised treatment</span> for:`,
-  ],
-  bullets: [
-    `<span class="font-bold">Pilonidal disease</span> – a recurring skin infection near the tailbone that can cause swelling, discharge, and discomfort.`,
-    `<span class="font-bold">Anorectal abscesses</span> – painful infections near the bottom, which may require a small procedure to drain.`,
-    `<span class="font-bold">Haemorrhoids (piles)</span> – lumps inside or around the bottom that can bleed, itch, or cause discomfort.`,
-    `<span class="font-bold">Anal fissures</span> – small tears that cause sharp pain and bleeding when opening the bowels.`,
-    `<span class="font-bold">Anal fistulas</span> – small tunnels that develop under the skin between the bowel and the skin around the bottom.`,
-    `<span class="font-bold">Chronic constipation / Diarrhea / Changes to bowel habits</span> – I am able to offer <span class="font-bold">fast access to consultation, diagnosis and treatment</span> to minimise disruption to your daily life — helping you get back to feeling like yourself as quickly as possible, with <span class="font-bold">complete discretion and support</span> at every step.`
-  ]
-}
-
+      fullDesc: {
+        paragraphs: [
+          `Problems affecting the <span class="font-bold">bottom</span> can be painful, disruptive, and sometimes difficult to talk about. These conditions are very common, and seeking <span class="font-bold">specialist care</span> can make a big difference to your comfort and quality of life.`,
+          `I offer <span class="font-bold">personalised treatment</span> for:`,
+        ],
+        bullets: [
+          `<span class="font-bold">Pilonidal disease</span> – a recurring skin infection near the tailbone that can cause swelling, discharge, and discomfort.`,
+          `<span class="font-bold">Anorectal abscesses</span> – painful infections near the bottom, which may require a small procedure to drain.`,
+          `<span class="font-bold">Haemorrhoids (piles)</span> – lumps inside or around the bottom that can bleed, itch, or cause discomfort.`,
+          `<span class="font-bold">Anal fissures</span> – small tears that cause sharp pain and bleeding when opening the bowels.`,
+          `<span class="font-bold">Anal fistulas</span> – small tunnels that develop under the skin between the bowel and the skin around the bottom.`,
+          `<span class="font-bold">Chronic constipation / Diarrhea / Changes to bowel habits</span> `,
+        ],
+        paragraph: [
+          `<span>I am able to offer <span class="font-bold">fast access to consultation, diagnosis and treatment</span> to minimise disruption to your daily life — helping you get back to feeling like yourself as quickly as possible, with <span class="font-bold">complete discretion and support</span> at every step.</span>`,
+        ],
+      },
     },
     {
-  id: "colonoscopy",
-  title: "Colonoscopy & Sigmoidoscopy",
-  category: "Diagnostic Procedures",
-  shortDesc:
-    "Fast access to diagnostic procedures for bowel symptoms and early cancer detection.",
-  fullDesc: {
-    paragraphs: [
-      `If you are experiencing <span class="font-bold">bowel symptoms</span> such as <span class="font-bold">persistent bleeding</span>, <span class="font-bold">changes in bowel habits</span>, <span class="font-bold">abdominal pain</span>, or <span class="font-bold">unexplained weight loss</span>, it’s important to investigate the cause promptly. <span class="font-bold">Early detection</span> can make a big difference, especially for conditions like <span class="font-bold">bowel cancer</span>, <span class="font-bold">polyps</span>, or <span class="font-bold">inflammatory bowel disease</span>.`,
-      
-      `I perform <span class="font-bold">colonoscopy</span> and <span class="font-bold">sigmoidoscopy</span> to examine your bowel. A <span class="font-bold">colonoscopy</span> looks at the entire colon, while a <span class="font-bold">sigmoidoscopy</span> focuses on the lower part of the bowel (<span class="font-bold">rectum and sigmoid colon</span>). Both procedures use a <span class="font-bold">thin, flexible camera</span> passed gently through the bottom, allowing me to see any abnormalities clearly.`,
-      
-      `You remain awake during the procedure, but I ensure you are <span class="font-bold">comfortable and supported</span> throughout, with <span class="font-bold">sedation available</span> if needed. These investigations are <span class="font-bold">quick, safe</span>, and are one of the most effective ways to <span class="font-bold">detect bowel problems early</span>, giving you the best chance of successful treatment.`,
-    ],
-  },
-},
+      id: "colonoscopy",
+      title: "Colonoscopy & Sigmoidoscopy",
+      category: "Diagnostic Procedures",
+      shortDesc:
+        "Fast access to diagnostic procedures for bowel symptoms and early cancer detection.",
+      fullDesc: {
+        paragraphs: [
+          `If you are experiencing <span class="font-bold">bowel symptoms</span> such as <span class="font-bold">persistent bleeding</span>, <span class="font-bold">changes in bowel habits</span>, <span class="font-bold">abdominal pain</span>, or <span class="font-bold">unexplained weight loss</span>, it’s important to investigate the cause promptly. <span class="font-bold">Early detection</span> can make a big difference, especially for conditions like <span class="font-bold">bowel cancer</span>, <span class="font-bold">polyps</span>, or <span class="font-bold">inflammatory bowel disease</span>.`,
 
+          `I perform <span class="font-bold">colonoscopy</span> and <span class="font-bold">sigmoidoscopy</span> to examine your bowel. A <span class="font-bold">colonoscopy</span> looks at the entire colon, while a <span class="font-bold">sigmoidoscopy</span> focuses on the lower part of the bowel (<span class="font-bold">rectum and sigmoid colon</span>). Both procedures use a <span class="font-bold">thin, flexible camera</span> passed gently through the bottom, allowing me to see any abnormalities clearly.`,
+
+          `You remain awake during the procedure, but I ensure you are <span class="font-bold">comfortable and supported</span> throughout, with <span class="font-bold">sedation available</span> if needed. These investigations are <span class="font-bold">quick, safe</span>, and are one of the most effective ways to <span class="font-bold">detect bowel problems early</span>, giving you the best chance of successful treatment.`,
+        ],
+      },
+    },
   ];
 
   return (
@@ -86,87 +88,110 @@ const Treatments = () => {
           </p>
           <p
             className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-            style={{ color: "#414141",fontWeight:300,fontSize:'20px' }}
+            style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
           >
             Advanced care. Personal attention. Peace of mind.
           </p>
         </section>
 
         {/* Treatments Grid */}
-<section className="grid grid-cols-2 gap-6 max-w-[1200px] mx-auto">
+        <section className="grid grid-cols-2 gap-6 max-w-[1200px] mx-auto">
           {treatments.map((treatment) => (
             <Card
               key={treatment.id}
-              className="glass-card hover-lift group"
+              // className="glass-card hover-lift group"
               style={{ backgroundColor: "#FAF9F7" }}
             >
               <CardContent className="p-6">
-                <h2>
-                  <span
-                    className="text-xs font-medium text-secondary uppercase tracking-wide"
-                    style={{ fontSize: "17px", fontWeight: "bold" }}
-                  >
-                    {treatment.category}
-                  </span>
-                </h2>
+                <p
+                  className=" uppercase tracking-wide mb-5"
+                  style={{
+                    color: "#31708F",
+                    fontSize: "17px",
+                  }}
+                >
+                  {treatment.category}
+                </p>
 
-                <h3 className="text-xl font-semibold text-primary mt-2 mb-3">
+                <p
+                  style={{
+                    color: "#31708F",
+                    fontSize: "17px",
+                  }}
+                >
+                  {" "}
                   {treatment.title}
-                </h3>
+                </p>
 
-               <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6"
-            style={{ color: "#414141",fontWeight:300,fontSize:'15px' }}
-          >
+                <p
+                  className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6"
+                  style={{
+                    color: "#414141",
+                    fontWeight: 300,
+                    fontSize: "15px",
+                  }}
+                >
                   {treatment.shortDesc}
                 </p>
 
                 {/* Full description */}
-{/* Full description */}
-<div className="space-y-4  leading-relaxed mt-6">
-  <h3
-    style={{
-      fontWeight: 100,
-      fontSize: "17px",
-      color: "#612512",
-      lineHeight: "1.6",
-    }}
-  >
-    {typeof treatment.fullDesc === "string" ? (
-  <div
-    dangerouslySetInnerHTML={{
-      __html: treatment.fullDesc
-        .split("\n\n")
-        .map((p) => `<p>${p}</p>`)
-        .join(""),
-    }}
-  />
-) : (
-  <>
-    {treatment.fullDesc.paragraphs.map((p, idx) => (
-      <p
-        key={idx}
-        dangerouslySetInnerHTML={{ __html: p }}
-      />
-    ))}
+                {/* Full description */}
+                <div className="space-y-4  leading-relaxed mt-6">
+                  <p
+                    className="text-[14px] sm:text-[15px] leading-relaxed"
+                    style={{
+                      color: "#612512",
+                      fontFamily: '"Montserrat", sans-serif',
+                      fontWeight: "100px",
+                      opacity: 0.8, // makes it visually thinner
+                    }}
+                  >
+                    {typeof treatment.fullDesc === "string" ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: treatment.fullDesc
+                            .split("\n\n")
+                            .map((p) => `<p>${p}</p>`)
+                            .join(""),
+                        }}
+                      />
+                    ) : (
+                      <>
+                        {treatment.fullDesc.paragraphs.map((p, idx) => (
+                          <p
+                            key={idx}
+                            dangerouslySetInnerHTML={{ __html: p }}
+                          />
+                        ))}
 
-    {treatment.fullDesc.bullets && (
-      <ul className="list-disc ml-5 space-y-2">
-        {treatment.fullDesc.bullets.map((b, idx) => (
-          <li
-            key={idx}
-            dangerouslySetInnerHTML={{ __html: b }}
-          />
-        ))}
-      </ul>
-    )}
-  </>
-)}
-
-  </h3>
-</div>
-
-
+                        {treatment.fullDesc.bullets && (
+                          <ul className="list-disc ml-5 space-y-2">
+                            {treatment.fullDesc.bullets.map((b, idx) => (
+                              <li
+                                key={idx}
+                                dangerouslySetInnerHTML={{ __html: b }}
+                              />
+                            ))}
+                          </ul>
+                        )}
+                        {treatment.fullDesc.paragraph &&
+                          treatment.fullDesc.paragraph.map((para, index) => (
+                            <p
+                              key={index}
+                              style={{
+                                color: "#612512",
+                                fontFamily: '"Montserrat", sans-serif',
+                                fontWeight: "100px",
+                                opacity: 0.8, // makes it visually thinner
+                              }}
+                              className="text-gray-700 leading-relaxed mt-4"
+                              dangerouslySetInnerHTML={{ __html: para }}
+                            />
+                          ))}
+                      </>
+                    )}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}

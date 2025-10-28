@@ -1,28 +1,33 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle2, Shield } from 'lucide-react';
-import bupaLogo from '@/assets/Bupa.png'
-import aetnaLogo from '@/assets/aetna.png';
-import allianzLogo from '@/assets/allianz.png';
-import avivaLogo from '@/assets/aviva.jpg';
-import axaLogo from '@/assets/axahealth.png';
-import cignaLogo from '@/assets/cigna.png';
-import vitalityLogo from '@/assets/vitality.png';
-import wpaLogo from '@/assets/wpa.png'
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { CheckCircle2, Shield } from "lucide-react";
+import bupaLogo from "@/assets/Bupa.png";
+import aetnaLogo from "@/assets/aetna.png";
+import allianzLogo from "@/assets/allianz.png";
+import avivaLogo from "@/assets/aviva.jpg";
+import axaLogo from "@/assets/axahealth.png";
+import cignaLogo from "@/assets/cigna.png";
+import vitalityLogo from "@/assets/vitality.png";
+import wpaLogo from "@/assets/wpa.png";
 
 const InsuranceFees = () => {
   const insurers = [
-bupaLogo,
-axaLogo,
-cignaLogo,
-vitalityLogo,
-avivaLogo,
-allianzLogo,
-aetnaLogo,
-wpaLogo
+    bupaLogo,
+    axaLogo,
+    cignaLogo,
+    vitalityLogo,
+    avivaLogo,
+    allianzLogo,
+    aetnaLogo,
+    wpaLogo,
   ];
 
-  const faqItems =  [
+  const faqItems = [
     {
       question: "How soon can I be seen?",
       answer:
@@ -75,55 +80,73 @@ wpaLogo
       <div className="container mx-auto px-4">
         {/* Header */}
         <section className="mb-16 text-center">
-   <p
+          <p
             style={{
               fontWeight: 300,
               color: "#31708F",
               fontSize: "28px",
-
             }}
-          >              Insurance & Fees
+          >
+            {" "}
+            Insurance & Fees
           </p>
- <p
+          <p
             className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-            style={{ color: "#414141",fontWeight:300,fontSize:'20px' }}
-          >              Transparent pricing and comprehensive insurance coverage
+            style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
+          >
+            {" "}
+            Transparent pricing and comprehensive insurance coverage
           </p>
         </section>
 
         {/* Insurance Section */}
-        <section className="mb-16" >
+        <section className="mb-16">
           <div className="max-w-4xl mx-auto">
-    <Card className="glass-card" style={{ backgroundColor: "#FAF9F7" }}>
+            <Card className="glass-card" style={{ backgroundColor: "#FAF9F7" }}>
               <CardContent className="p-8">
-                <div className="flex items-center justify-center mb-6">
+                {/* <div className="flex items-center justify-center mb-6">
                   <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
                     <Shield className="text-secondary" size={32} />
                   </div>
-                </div>
-                <h2 className="text-2xl font-bold text-primary text-center mb-6">
+                </div> */}
+                {/* <h2 className=" text-center mb-6"> */}
+                <p
+                  className=" text-center mb-6"
+                  style={{
+                    fontWeight: 300,
+                    color: "#31708F",
+                    fontSize: "28px",
+                  }}
+                >
                   Recognised by All Major Health Insurers
-                </h2>
-                <p className="text-center text-muted-foreground mb-8">
-                  Joshua Franklyn is recognised by all major health insurers in the UK
+                </p>
+                <p
+                  className="text-xl text-center text-muted-foreground max-w-3xl mx-auto mt-8"
+                  style={{
+                    color: "#414141",
+                    fontWeight: 300,
+                    fontSize: "20px",
+                  }}
+                >
+                  {" "}
+                  Joshua Franklyn is recognised by all major health insurers in
+                  the UK
                 </p>
 
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-  {insurers.map((logo, idx) => (
-    <div
-      key={idx}
-      className="flex items-center justify-center p-4 bg-muted/30 rounded-lg"
-
-    >
-      <img
-        src={logo}
-        alt={`Insurer ${idx + 1}`}
-        className="h-12 object-contain" // adjust height as needed
-      />
-    </div>
-  ))}
-</div>
-
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                  {insurers.map((logo, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center justify-center p-4 bg-muted/30 rounded-lg"
+                    >
+                      <img
+                        src={logo}
+                        alt={`Insurer ${idx + 1}`}
+                        className="h-12 object-contain" // adjust height as needed
+                      />
+                    </div>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -179,7 +202,7 @@ wpaLogo
         </section> */}
 
         {/* FAQ Section */}
-     {/* <section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
+        {/* <section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
   <div className="max-w-4xl mx-auto">
     <h2 className=" mb-8 text-center" style={{background:'#31708',fontSize:'28px',fontFamily: '"Worksans-extralight","work sans", sans-serif',
 }}>
@@ -205,71 +228,73 @@ wpaLogo
     </div>
   </div>
 </section> */}
-<section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
-  <div className="max-w-4xl mx-auto">
-    <h2
-      className="mb-8 text-center"
-      style={{
-        color: "#31708E",
-        fontSize: "28px",
-        fontFamily: '"Worksans-extralight","Work Sans", sans-serif',
-        padding: "10px 0",
-        borderRadius: "6px",
-      }}
-    >
-      Frequently Asked Questions
-    </h2>
-
-    <div className="space-y-4">
-      {faqItems.map((item, index) => (
-        <div
-          key={index}
-          className="glass-card border-0 rounded-lg px-6 py-4"
-          style={{ backgroundColor: "#FAF9F7" }}
-        >
-          <h3
-            className="mb-2"
-            style={{
-              color: "#414141",
-              fontSize: "20px",
-              fontFamily: '"Worksans-extralight","Work Sans", sans-serif',
-            }}
-          >
-            {item.question}
-          </h3>
-
-          {Array.isArray(item.answer) ? (
-            item.answer.map((paragraph, i) => (
-              <h3
-                key={i}
-                style={{
-                  color: "#612512",
-                  fontSize: "17px",
-                  marginBottom: "10px",
-                  lineHeight: "1.6",
-                }}
-              >
-                {paragraph}
-              </h3>
-            ))
-          ) : (
-            <h3
+        <section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
+          <div className="max-w-4xl mx-auto">
+            <h2
+              className="mb-8 text-center"
               style={{
-                color: "#612512",
-                fontSize: "17px",
-                lineHeight: "1.6",
+                color: "#31708E",
+                fontSize: "28px",
+                fontFamily: '"Worksans-extralight","Work Sans", sans-serif',
+                padding: "10px 0",
+                borderRadius: "6px",
+                fontWeight: 300,
               }}
             >
-              {item.answer}
-            </h3>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+              Frequently Asked Questions
+            </h2>
 
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="glass-card border-0 rounded-lg px-6 py-4"
+                  style={{ backgroundColor: "#FAF9F7" }}
+                >
+                  <p
+                    className="mb-2"
+                    style={{
+                      color: "#414141",
+                      fontWeight: 300,
+                      fontSize: "20px",
+                    }}
+                  >
+                    {item.question}
+                  </p>
 
+                  {Array.isArray(item.answer) ? (
+                    item.answer.map((paragraph, i) => (
+                      <p
+                        key={i}
+                        className="text-[14px] sm:text-[15px] leading-relaxed"
+                        style={{
+                          color: "#612512",
+                          fontFamily: '"Montserrat", sans-serif',
+                          fontWeight: "100px",
+                          opacity: 0.8, // makes it visually thinner
+                        }}
+                      >
+                        {paragraph}
+                      </p>
+                    ))
+                  ) : (
+                    <p
+                      className="text-[14px] sm:text-[15px] leading-relaxed"
+                      style={{
+                        color: "#612512",
+                        fontFamily: '"Montserrat", sans-serif',
+                        fontWeight: "100px",
+                        opacity: 0.8, // makes it visually thinner
+                      }}
+                    >
+                      {item.answer}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

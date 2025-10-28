@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import jfLogo from "../../assets/logo-jf-removebg-preview.png";
+import jfLogo from "../../assets/favicon-removebg-preview.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,12 +11,10 @@ const Header = () => {
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-
-// 👇 Scroll to top when route changes
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, [location.pathname]);
-
+  // 👇 Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   // Hospital list
   const hospitals = [
@@ -62,17 +60,16 @@ useEffect(() => {
   ];
 
   return (
-<header
-  className={`fixed top-0 left-0 right-0 z-50 bg-[#FAF9F7] transition-all duration-300 
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#FAF9F7] transition-all duration-300 
   `}
->
-
-
+    >
       <nav className="max-w-7xl mx-auto px-6 md:px-20">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img style={{height: 100, width: 100}}
+            <img
+              style={{ height: 100, width: 100 }}
               src={jfLogo}
               alt="logo"
               className=" rounded-full object-cover"
@@ -80,27 +77,25 @@ useEffect(() => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-10">
-            
-{navLinks.map((link) => (
-  <h3 key={link.to} className="m-0 p-0">
-    <Link
-      to={link.to}
-      className={` transition-colors hover:text-[#31708F] ${
-        location.pathname === link.to
-          ? "text-[#31708F]"
-          : "text-[#612512]"
-      }`}
-      style={{
-        fontWeight: 100,
-        // fontFamily: '"Work Sans", sans-serif',
-        fontSize:'17px'
-      }}
-    >
-      {link.label}
-    </Link>
-  </h3>
-))}
+          {/* <div className="hidden lg:flex items-center space-x-10"> */}
+          <div className="hidden lg:flex items-center space-x-10" style={{}}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`block text-sm font-light transition-colors hover:text-[#31708F] ${
+                  location.pathname === link.to
+                    ? "text-[#31708F]"
+                    : "text-[#414141]"
+                }`}
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
+                // style={{ fontFamily: '"Brandon Grot W01 Light", "Work Sans", sans-serif' ,fontSize:'17px'}}
+
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
 
             {/* ✅ Book Appointment Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -110,20 +105,22 @@ useEffect(() => {
                 className="border-[#31708F] text-[#31708F] hover:bg-[#31708F] hover:text-white"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               > */}
-                    <h3
-                      className="text-[17px] sm:text-[17px] leading-relaxed"
-                      style={{  }}
-                    >
-                    <Button
-                variant="outline"
-                className="mb-2 px-8 py-6 w-[200px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
-                style={{
-                  fontFamily: '"Brandon Grot W01 Light", "Work Sans", sans-serif',
-                }}
+              <h3
+                className="text-[17px] sm:text-[17px] leading-relaxed"
+                style={{}}
               >
-                Book Appointment
-              </Button>
-</h3>
+                <Button
+                  variant="outline"
+                  className="mb-2 px-8 py-6 w-[200px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+                  style={{
+                    fontFamily:
+                      '"Brandon Grot W01 Light", "Work Sans", sans-serif',
+                  }}
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)} // 👈 This line enables the dropdown toggle
+                >
+                  Book Appointment
+                </Button>
+              </h3>
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                   {hospitals.map((hospital, index) => (
@@ -160,11 +157,12 @@ useEffect(() => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`block text-sm font-light transition-colors hover:text-[#31708F] ${
+                className={`block font-light transition-colors hover:text-[#31708F] ${
                   location.pathname === link.to
                     ? "text-[#31708F]"
                     : "text-[#414141]"
                 }`}
+                style={{ fontFamily: ' "Montserrat", sans-serif;' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
