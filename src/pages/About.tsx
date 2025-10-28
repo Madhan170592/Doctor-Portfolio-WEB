@@ -86,7 +86,7 @@ const About = () => {
                   <span className="font-bold">
                     Fellow of the Royal College of Surgeons (FRCS)
                   </span>{" "}
-                  an active member of both the
+                  an active member of both the{" "}
                   <span className="font-bold">
                     Association of Coloproctology of Great Britain & Ireland
                   </span>{" "}
