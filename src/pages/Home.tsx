@@ -58,113 +58,124 @@ const Home = () => {
     <>
       <SEO />
       <main className="min-h-screen mt-8">
-        <section className="relative min-h-screen flex items-center justify-center bg-[#FAF9F7] overflow-hidden">
-          {/* Wrapper with 73% width */}
-          <div className="relative w-[73%] flex flex-col md:flex-row items-center">
-            {/* Left Column - Text */}
-            <div className="w-full md:w-1/2 flex items-center justify-center pr-6 sm:pr-10 md:pr-12 lg:pr-16 relative z-20">
-              <div className="max-w-md text-left text-[#222] relative z-20">
-                <h1
-                  className="text-[24px] sm:text-[38px] md:text-[56px] font-light leading-tight mb-2 whitespace-nowrap"
-                  style={{
-                    fontFamily: '"Work Sans", sans-serif',
-                    lineHeight: "1.2",
-                    color: "#31708F",
-                  }}
-                >
-                  Joshua Franklyn
-                  <span className="text-[16px] sm:text-[18px] font-light ml-2 text-[#31708F]">
-                    MS FRCS
-                  </span>
-                </h1>
+     <section className="relative min-h-screen flex items-center justify-center bg-[#FAF9F7] overflow-hidden">
+  {/* Wrapper with 73% width */}
+  <div className="relative w-[73%] flex flex-col md:flex-row items-center">
+    {/* Left Column - Text */}
+    <div
+      className="
+        w-full md:w-1/2 
+        flex items-center justify-center 
+        pr-6 sm:pr-10 md:pr-12 lg:pr-16 
+        relative 
+        z-[50] md:z-20 
+        bg-[#FAF9F7] md:bg-transparent
+      "
+    >
+      <div className="max-w-md text-left text-[#222] relative z-20">
+        <h1
+          className="text-[24px] sm:text-[38px] md:text-[56px] font-light leading-tight mb-2"
+          style={{
+            fontFamily: '"Work Sans", sans-serif',
+            lineHeight: "1.2",
+            color: "#31708F",
+          }}
+        >
+          Joshua Franklyn
+          <span className="text-[16px] sm:text-[18px] font-light ml-2 text-[#31708F]">
+            MS FRCS
+          </span>
+        </h1>
 
-                <p
-                  className="mb-6"
-                  style={{
-                    fontFamily: '"Work Sans", sans-serif',
-                    color: "#31708F",
-                    fontSize: "23px",
-                    // opacity:0.8,
-                    fontWeight: 300,
-                  }}
-                >
-                  Consultant Robotic General and Colorectal Surgeon
-                </p>
+        <p
+          className="mb-6"
+          style={{
+            fontFamily: '"Work Sans", sans-serif',
+            color: "#31708F",
+            fontSize: "23px",
+            fontWeight: 300,
+          }}
+        >
+          Consultant Robotic General and Colorectal Surgeon
+        </p>
 
-                <p
-                  className="leading-relaxed mb-8"
-                  style={{
-                    color: "#31708F",
-                    fontSize: "20px",
-                    fontFamily: '"Work Sans", sans-serif',
-                    fontWeight: 300,
-                  }}
-                >
-                  A dedicated and skilled consultant surgeon, working closely
-                  with each patient to choose the most appropriate treatment for
-                  their individual needs.
-                </p>
+        <p
+          className="leading-relaxed mb-8"
+          style={{
+            color: "#31708F",
+            fontSize: "20px",
+            fontFamily: '"Work Sans", sans-serif',
+            fontWeight: 300,
+          }}
+        >
+          A dedicated and skilled consultant surgeon, working closely with each
+          patient to choose the most appropriate treatment for their individual
+          needs.
+        </p>
 
-                <div
-                  className="sm:flex-row items-start justify-start gap-4"
-                  ref={dropdownRef}
-                >
-                  <p
-                    className="text-[17px] sm:text-[17px] leading-relaxed"
-                    // style={{ fontFamily: '"Montserrat", sans-serif' }}
+                          <div
+                    className="sm:flex-row items-start justify-start gap-4"
+                    ref={dropdownRef}
                   >
-                    <Button
-                      variant="outline"
-                      className="mb-2 px-8 py-6 w-[220px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
-                      style={{ fontFamily: '"Montserrat", sans-serif' }}
+                    <p
+                      className="text-[17px] sm:text-[17px] leading-relaxed"
+                      // style={{ fontFamily: '"Montserrat", sans-serif' }}
                     >
-                      View Treatments
-                    </Button>
-                  </p>
-                  <p
-                    className="text-[17px] sm:text-[17px] leading-relaxed"
-                    // style={{ fontWeight: 100 }}
-                  >
-                    <Button
-  className="bg-[#31708F] hover:bg-[#717171] text-white px-8 py-6 text-base w-[220px] mb-6 sm:mb-0"
-                      style={{ fontFamily: '"Montserrat", sans-serif' }}
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
+                      <Button
+                        variant="outline"
+                        className="mb-2 px-8 py-6 w-[220px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+                        style={{ fontFamily: '"Montserrat", sans-serif' }}
+                      >
+                        <Link to="/treatments">View Treatments</Link>
+                        {/* View Treatments */}
+                      </Button>
+                    </p>
+                    <p
+                      className="text-[17px] sm:text-[17px] leading-relaxed"
+                      // style={{ fontWeight: 100 }}
                     >
-                      Book Appointment
-                    </Button>
-                    {isDropdownOpen && (
-                      <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                        {hospitals.map((hospital, index) => (
-                          <a
-                            key={index}
-                            href={hospital.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#31708F]/10 hover:text-[#31708F]"
-                            onClick={() => setIsDropdownOpen(false)}
-                          >
-                            {hospital.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </p>
+                      <Button
+    className="bg-[#31708F] hover:bg-[#717171] text-white px-8 py-6 text-base w-[220px] mb-6 sm:mb-0"
+                        style={{ fontFamily: '"Montserrat", sans-serif' }}
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)} // 👈 This line enables the dropdown toggle
+                      >
+                        Book Appointment
+                      </Button>
+                      {isDropdownOpen && (
+                        <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                          {hospitals.map((hospital, index) => (
+                            <a
+                              key={index}
+                              href={hospital.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#31708F]/10 hover:text-[#31708F]"
+                              onClick={() => setIsDropdownOpen(false)}
+                            >
+                              {hospital.name}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Right Column - Image */}
-            <div className="relative w-full md:w-1/2 h-[400px] md:h-[80vh]">
-              <img
-                src={heroImage}
-                alt="Dr. Joshua Franklyn"
-                className="w-full h-full object-cover"
-              />
-              {/* overlay visible only for left half */}
-              <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent" />
-            </div>
-          </div>
-        </section>
+
+    {/* Right Column - Image */}
+    <div className="relative w-full md:w-1/2 h-[400px] md:h-[80vh]">
+      <img
+        src={heroImage}
+        alt="Dr. Joshua Franklyn"
+        className="w-full h-full object-cover"
+      />
+      {/* overlay visible only for left half */}
+      <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent" />
+    </div>
+  </div>
+</section>
+
 
         {/* General Colorectal Surgery Section */}
         <section className="py-16 sm:py-20 bg-[#fAf9f7]">
