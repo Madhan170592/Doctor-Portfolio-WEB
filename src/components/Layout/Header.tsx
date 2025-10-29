@@ -5,18 +5,15 @@ import { Button } from "@/components/ui/button";
 import jfLogo from "../../assets/favicon-removebg-preview.png";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  // 👇 Scroll to top when route changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
-  // Hospital list
   const hospitals = [
     {
       name: "Foscote Hospital",
@@ -28,15 +25,6 @@ const Header = () => {
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -60,67 +48,50 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#FAF9F7] transition-all duration-300 
-  `}
+      <header
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center bg-white transition-all duration-300"
+      style={{ width: "100%" }}
     >
-      <nav className="max-w-7xl mx-auto px-6 md:px-20">
-        <div className="flex items-center justify-between">
+      {/* ✅ Match Home layout — 95% width container with bg-[#FAF9F7] */}
+      <div className="w-[95%] max-w-[2999px] bg-[#FAF9F7]">
+        <nav className="flex items-center justify-between px-6 sm:px-10 lg:px-16 xl:px-24 py-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 ml-5">
             <img
-              style={{ height: 100, width: 100 }}
               src={jfLogo}
               alt="logo"
-              className=" rounded-full object-cover"
+              className="rounded-full object-cover"
+              style={{ height: 65, width: 65 }}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          {/* <div className="hidden lg:flex items-center space-x-10"> */}
-          <div className="hidden lg:flex items-center space-x-10" style={{}}>
+          <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-10 flex-wrap">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`block text-sm font-light transition-colors hover:text-[#31708F] ${
+                className={`text-sm font-light transition-colors hover:text-[#31708F] ${
                   location.pathname === link.to
                     ? "text-[#31708F]"
                     : "text-[#414141]"
                 }`}
                 style={{ fontFamily: '"Montserrat", sans-serif' }}
-                // style={{ fontFamily: '"Brandon Grot W01 Light", "Work Sans", sans-serif' ,fontSize:'17px'}}
-
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
 
-            {/* ✅ Book Appointment Dropdown */}
+            {/* Book Appointment Button */}
             <div className="relative" ref={dropdownRef}>
-              {/* <Button
+              <Button
                 variant="outline"
-                size="sm"
-                className="border-[#31708F] text-[#31708F] hover:bg-[#31708F] hover:text-white"
+                className="py-4 px-0 w-[180px] mr-7 transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              > */}
-              <h3
-                className="text-[17px] sm:text-[17px] leading-relaxed"
-                style={{}}
               >
-                <Button
-                  variant="outline"
-                  className="mb-2 px-8 py-6 w-[200px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
-                  style={{
-                    fontFamily:
-                      '"Brandon Grot W01 Light", "Work Sans", sans-serif',
-                  }}
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)} // 👈 This line enables the dropdown toggle
-                >
-                  Book Appointment
-                </Button>
-              </h3>
+                Book Appointment
+              </Button>
+
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                   {hospitals.map((hospital, index) => (
@@ -140,19 +111,19 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden text-gray-800"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
-        </div>
+        </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-4">
+          <div className="lg:hidden mt-2 pb-4 space-y-4 px-5 sm:px-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -162,14 +133,13 @@ const Header = () => {
                     ? "text-[#31708F]"
                     : "text-[#414141]"
                 }`}
-                style={{ fontFamily: ' "Montserrat", sans-serif;' }}
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
 
-            {/* ✅ Mobile Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <Button
                 variant="outline"
@@ -201,7 +171,7 @@ const Header = () => {
             </div>
           </div>
         )}
-      </nav>
+      </div>
     </header>
   );
 };
