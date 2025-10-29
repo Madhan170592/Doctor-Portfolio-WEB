@@ -56,7 +56,7 @@ const Header = () => {
       <div className="w-[95%] max-w-[1800px] bg-[#FAF9F7] ">
         <nav className="flex items-center justify-between px-6 sm:px-10 lg:px-16 xl:px-24 py-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 ml-5">
             <img
               src={jfLogo}
               alt="logo"
@@ -86,7 +86,7 @@ const Header = () => {
             <div className="relative" ref={dropdownRef}>
               <Button
                 variant="outline"
-                className=" py-6 w-[220px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+                className=" py-4 px-0 w-[180px] mr-7 transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 Book Appointment
