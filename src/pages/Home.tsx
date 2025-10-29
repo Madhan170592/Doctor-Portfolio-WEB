@@ -165,7 +165,7 @@ const Home = () => {
             </section>
 
             {/* ==================== General Surgery Section ==================== */}
-            <section className="pb-16 sm:pb-20 bg-[#FAF9F7]">
+            <section className="pb-16 sm:pb-20 mx-8 bg-[#FAF9F7]">
               <div className="w-full px-6 sm:px-12 md:px-[92px] lg:px-[95px] space-y-12">
                 <div className="text-center md:text-left space-y-6 reveal">
                   <h2
