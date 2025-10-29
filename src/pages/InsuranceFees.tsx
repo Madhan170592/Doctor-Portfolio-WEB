@@ -76,196 +76,138 @@ const InsuranceFees = () => {
   ];
 
   return (
-    <main className="min-h-screen pt-24 pb-16 bg-[#FAF9F7] mt-8">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <section className="mb-16 text-center">
-          <p
-            style={{
-              fontWeight: 300,
-              color: "#31708F",
-              fontSize: "28px",
-            }}
-          >
-            {" "}
-            Insurance & Fees
-          </p>
-          <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-            style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
-          >
-            {" "}
-            Transparent pricing and comprehensive insurance coverage
-          </p>
-        </section>
+    <main className="bg-white flex justify-center items-stretch min-h-screen">
+      {/* Full-height FAF9F7 background container */}
+      <div className="w-[95%] max-w-[1800px] bg-[#FAF9F7] min-h-screen px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-[100px] pb-24  flex flex-col justify-start shadow-sm">
+        <div className="max-w-[1200px] mx-auto w-full">
+          {/* Header */}
+          <section className="mb-16 text-center">
+            <p
+              style={{
+                fontWeight: 300,
+                color: "#31708F",
+                fontSize: "28px",
+              }}
+            >
+              {" "}
+              Insurance & Fees
+            </p>
+            <p
+              className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
+              style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
+            >
+              {" "}
+              Transparent pricing and comprehensive insurance coverage
+            </p>
+          </section>
 
-        {/* Insurance Section */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="glass-card" style={{ backgroundColor: "#FAF9F7" }}>
-              <CardContent className="p-8">
-                {/* <div className="flex items-center justify-center mb-6">
+          {/* Insurance Section */}
+          <section className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <Card
+                className="glass-card"
+                style={{ backgroundColor: "#FAF9F7" }}
+              >
+                <CardContent className="p-8">
+                  {/* <div className="flex items-center justify-center mb-6">
                   <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
                     <Shield className="text-secondary" size={32} />
                   </div>
                 </div> */}
-                {/* <h2 className=" text-center mb-6"> */}
-                <p
-                  className=" text-center mb-6"
-                  style={{
-                    fontWeight: 300,
-                    color: "#31708F",
-                    fontSize: "28px",
-                  }}
-                >
-                  Recognised by All Major Health Insurers
-                </p>
-                <p
-                  className="text-xl text-center text-muted-foreground max-w-3xl mx-auto mt-8"
-                  style={{
-                    color: "#414141",
-                    fontWeight: 300,
-                    fontSize: "20px",
-                  }}
-                >
-                  {" "}
-                  Joshua Franklyn is recognised by all major health insurers in
-                  the UK
-                </p>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                  {insurers.map((logo, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-center p-4 bg-muted/30 rounded-lg"
-                    >
-                      <img
-                        src={logo}
-                        alt={`Insurer ${idx + 1}`}
-                        className="h-12 object-contain" // adjust height as needed
-                      />
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Self Pay Section */}
-        {/* <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="glass-card">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-primary mb-6 text-center">
-                  Self-Pay Patients
-                </h2>
-                
-                <div className="bg-muted/30 rounded-lg p-6 mb-6">
-                  <table className="w-full">
-                    <tbody>
-                      <tr className="border-b border-border">
-                        <td className="py-4 text-muted-foreground font-medium">
-                          Initial Consultation:
-                        </td>
-                        <td className="py-4 text-right text-xl font-bold text-primary">
-                          £175
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 text-muted-foreground font-medium">
-                          Follow-up Consultation:
-                        </td>
-                        <td className="py-4 text-right text-xl font-bold text-primary">
-                          £125
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="bg-secondary/10 border-l-4 border-secondary rounded-r-lg p-6">
-                  <h3 className="text-lg font-semibold text-primary mb-3 flex items-center">
-                    <CheckCircle2 className="mr-2 text-secondary" size={20} />
-                    Fee Assured Services
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    After your initial consultation, we'll provide a personalised treatment plan 
-                    with a clear, fee-assured quotation. This covers your entire treatment 
-                    (investigations and surgery) and one follow-up appointment, so there are no 
-                    hidden costs and no surprises.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section> */}
-
-        {/* FAQ Section */}
-        {/* <section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
-  <div className="max-w-4xl mx-auto">
-    <h2 className=" mb-8 text-center" style={{background:'#31708',fontSize:'28px',fontFamily: '"Worksans-extralight","work sans", sans-serif',
-}}>
-      Frequently Asked Questions
-    </h2>
-
-    <div className="space-y-4">
-      {faqItems.map((item, index) => (
-        <div
-          key={index}
-          className="glass-card border-0 rounded-lg px-6 py-4"
-          style={{ backgroundColor: "#FAF9F7" }}
-        >
-          <h3 className=" mb-2"style={{color:'#414141',fontSize:'20px', fontFamily: '"Worksans-extralight","work sans", sans-serif',
-}}>
-            {item.question}
-          </h3>
-          <h3 style={{color:'#612512',fontSize:'17px'}}>
-            {item.answer}
-          </h3>
-        </div>
-      ))}
-    </div>
-  </div>
-</section> */}
-        <section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
-          <div className="max-w-4xl mx-auto">
-            <h2
-              className="mb-8 text-center"
-              style={{
-                color: "#31708E",
-                fontSize: "28px",
-                fontFamily: '"Worksans-extralight","Work Sans", sans-serif',
-                padding: "10px 0",
-                borderRadius: "6px",
-                fontWeight: 300,
-              }}
-            >
-              Frequently Asked Questions
-            </h2>
-
-            <div className="space-y-4">
-              {faqItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="glass-card border-0 rounded-lg px-6 py-4"
-                  style={{ backgroundColor: "#FAF9F7" }}
-                >
+                  {/* <h2 className=" text-center mb-6"> */}
                   <p
-                    className="mb-2"
+                    className=" text-center mb-6"
+                    style={{
+                      fontWeight: 300,
+                      color: "#31708F",
+                      fontSize: "28px",
+                    }}
+                  >
+                    Recognised by All Major Health Insurers
+                  </p>
+                  <p
+                    className="text-xl text-center text-muted-foreground max-w-3xl mx-auto mt-8"
                     style={{
                       color: "#414141",
                       fontWeight: 300,
                       fontSize: "20px",
                     }}
                   >
-                    {item.question}
+                    {" "}
+                    Joshua Franklyn is recognised by all major health insurers
+                    in the UK
                   </p>
 
-                  {Array.isArray(item.answer) ? (
-                    item.answer.map((paragraph, i) => (
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    {insurers.map((logo, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center justify-center p-4 bg-muted/30 rounded-lg"
+                      >
+                        <img
+                          src={logo}
+                          alt={`Insurer ${idx + 1}`}
+                          className="h-12 object-contain" // adjust height as needed
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          <section style={{ backgroundColor: "#FAF9F7" }} className="py-16">
+            <div className="max-w-4xl mx-auto">
+              <h2
+                className="mb-8 text-center"
+                style={{
+                  color: "#31708E",
+                  fontSize: "28px",
+                  fontFamily: '"Worksans-extralight","Work Sans", sans-serif',
+                  padding: "10px 0",
+                  borderRadius: "6px",
+                  fontWeight: 300,
+                }}
+              >
+                Frequently Asked Questions
+              </h2>
+
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="glass-card border-0 rounded-lg px-6 py-4"
+                    style={{ backgroundColor: "#FAF9F7" }}
+                  >
+                    <p
+                      className="mb-2"
+                      style={{
+                        color: "#414141",
+                        fontWeight: 300,
+                        fontSize: "20px",
+                      }}
+                    >
+                      {item.question}
+                    </p>
+
+                    {Array.isArray(item.answer) ? (
+                      item.answer.map((paragraph, i) => (
+                        <p
+                          key={i}
+                          className="text-[14px] sm:text-[15px] leading-relaxed"
+                          style={{
+                            color: "#612512",
+                            fontFamily: '"Montserrat", sans-serif',
+                            fontWeight: "100px",
+                            opacity: 0.8, // makes it visually thinner
+                          }}
+                        >
+                          {paragraph}
+                        </p>
+                      ))
+                    ) : (
                       <p
-                        key={i}
                         className="text-[14px] sm:text-[15px] leading-relaxed"
                         style={{
                           color: "#612512",
@@ -274,27 +216,15 @@ const InsuranceFees = () => {
                           opacity: 0.8, // makes it visually thinner
                         }}
                       >
-                        {paragraph}
+                        {item.answer}
                       </p>
-                    ))
-                  ) : (
-                    <p
-                      className="text-[14px] sm:text-[15px] leading-relaxed"
-                      style={{
-                        color: "#612512",
-                        fontFamily: '"Montserrat", sans-serif',
-                        fontWeight: "100px",
-                        opacity: 0.8, // makes it visually thinner
-                      }}
-                    >
-                      {item.answer}
-                    </p>
-                  )}
-                </div>
-              ))}
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </main>
   );

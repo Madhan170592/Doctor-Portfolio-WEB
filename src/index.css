@@ -38,10 +38,10 @@ All colors MUST be HSL.
     --ring: 186 45% 50%;
 
     --radius: 0.5rem;
-    
+
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 210 15% 25%;
     --sidebar-primary: 186 45% 50%;
@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --border: 210 15% 28%;
     --input: 210 15% 28%;
     --ring: 186 45% 55%;
-    
+
     --sidebar-background: 210 20% 15%;
     --sidebar-foreground: 30 25% 95%;
     --sidebar-primary: 186 45% 55%;
@@ -96,21 +96,25 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-body {
-  font-family: "Brandon Grot W01 Light", "Work Sans", "Montserrat", sans-serif;
-}
-@font-face {
-  font-family: "Brandon Grot W01 Light";
-  src: url("https://db.onlinewebfonts.com/t/44E1EB74A7C6D1BA8E3A1E6AB91C6DAA.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+  body {
+    font-family: "Brandon Grot W01 Light", "Work Sans", "Montserrat", sans-serif;
+  }
+  @font-face {
+    font-family: "Brandon Grot W01 Light";
+    src: url("https://db.onlinewebfonts.com/t/44E1EB74A7C6D1BA8E3A1E6AB91C6DAA.woff2")
+      format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
 
-
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cormorant Garamond", serif;
     font-weight: 400;
     letter-spacing: 0.01em;
     color: hsl(var(--primary));
@@ -123,10 +127,39 @@ body {
 
   /* Accessibility - Respect reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+  }
+}
+@layer utilities {
+  /* Default (large screens) */
+  .hero-container {
+    height: 80vh !important;
+  }
+
+  /* 📱 Mobile (below 768px) */
+  @media (max-width: 767px) {
+    .hero-container {
+      height: 100vh !important;
+    }
+  }
+
+  /* 💻 Tablet → Laptop range (768px - 1440px) */
+  @media (min-width: 768px) and (max-width: 1440px) {
+    .hero-container {
+      height: 120vh !important; /* ⬆️ Increase only in this range */
+    }
+  }
+
+  /* 🖥️ Large screens (above 1440px) */
+  @media (min-width: 1441px) {
+    .hero-container {
+      height: 80vh !important;
     }
   }
 }
