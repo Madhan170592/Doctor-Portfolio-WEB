@@ -293,31 +293,33 @@ const Publications = () => {
   ];
 
   return (
-    <main className="min-h-screen pt-24 pb-16 bg-[#FAF9F7] mt-8">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <section className="mb-16 text-center">
-          <p
-            style={{
-              fontWeight: 300,
-              color: "#31708F",
-              fontSize: "28px",
-            }}
-          >
-            {" "}
-            Publications
-          </p>
-          <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-            style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
-          >
-            {" "}
-            Contributions to surgical literature and medical education
-          </p>
-        </section>
+    <main className="bg-white flex justify-center items-stretch min-h-screen">
+      {/* Inner container with full-height FAF9F7 background */}
+      <div className="w-[95%] max-w-[1800px] bg-[#FAF9F7] min-h-screen px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-[100px] pb-24  flex flex-col justify-start">
+        <div className="max-w-[1200px] mx-auto w-full">
+          {/* Header */}
+          <section className="mb-16 text-center">
+            <p
+              style={{
+                fontWeight: 300,
+                color: "#31708F",
+                fontSize: "28px",
+              }}
+            >
+              {" "}
+              Publications
+            </p>
+            <p
+              className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
+              style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
+            >
+              {" "}
+              Contributions to surgical literature and medical education
+            </p>
+          </section>
 
-        {/* Stats */}
-        {/* <section className="mb-16">
+          {/* Stats */}
+          {/* <section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <Card className="glass-card text-center">
               <CardContent className="pt-8 pb-8">
@@ -340,49 +342,151 @@ const Publications = () => {
           </div>
         </section> */}
 
-        {/* Tabs for different publication types */}
-        <Tabs defaultValue="papers" className="w-full">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12">
-            <TabsTrigger value="papers">
-              <FileText className="mr-2 h-4 w-4" />
-              Papers
-            </TabsTrigger>
-            <TabsTrigger value="chapters">
-              <BookOpen className="mr-2 h-4 w-4" />
-              Chapters
-            </TabsTrigger>
-          </TabsList>
+          {/* Tabs for different publication types */}
+          <Tabs defaultValue="papers" className="w-full">
+            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12">
+              <TabsTrigger value="papers">
+                <FileText className="mr-2 h-4 w-4" />
+                Papers
+              </TabsTrigger>
+              <TabsTrigger value="chapters">
+                <BookOpen className="mr-2 h-4 w-4" />
+                Chapters
+              </TabsTrigger>
+            </TabsList>
 
-          {/* ✅ Keep this one */}
-          <TabsContent value="papers">
-            <div className="max-w-4xl mx-auto space-y-6">
-              {peerReviewed.map((paper, index) => (
-                <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <p
-                          className="mb-5"
-                          style={{
-                            fontWeight: 300,
-                            color: "#31708F",
-                            fontSize: "20px",
-                          }}
-                        >
-                          {paper.title}
-                        </p>
-                        <p
-                          className="mt-2 mb-2"
-                          style={{
-                            color: "#414141",
-                            fontWeight: 300,
-                            fontSize: "17px",
-                          }}
-                        >
-                          {paper.journal}
-                        </p>
+            {/* ✅ Keep this one */}
+            <TabsContent value="papers">
+              <div className="max-w-4xl mx-auto space-y-6">
+                {peerReviewed.map((paper, index) => (
+                  <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <p
+                            className="mb-5"
+                            style={{
+                              fontWeight: 300,
+                              color: "#31708F",
+                              fontSize: "20px",
+                            }}
+                          >
+                            {paper.title}
+                          </p>
+                          <p
+                            className="mt-2 mb-2"
+                            style={{
+                              color: "#414141",
+                              fontWeight: 300,
+                              fontSize: "17px",
+                            }}
+                          >
+                            {paper.journal}
+                          </p>
 
-                        {paper.authors && (
+                          {paper.authors && (
+                            <p
+                              className="text-[14px] sm:text-[15px] leading-relaxed"
+                              style={{
+                                color: "#612512",
+                                fontFamily: '"Montserrat", sans-serif',
+                                opacity: 0.8,
+                              }}
+                            >
+                              <strong>Authors:</strong>{" "}
+                              {paper.authors
+                                .split(",")
+                                .map((author, idx, arr) => {
+                                  const trimmedAuthor = author.trim();
+                                  const isFranklyn =
+                                    /^(j(\.?|oshua)?\sfranklyn|franklyn\sj\.?)$/i.test(
+                                      trimmedAuthor
+                                    );
+
+                                  const authorElement = isFranklyn ? (
+                                    <strong>{trimmedAuthor}</strong>
+                                  ) : (
+                                    trimmedAuthor
+                                  );
+
+                                  return paper.links && paper.links[idx] ? (
+                                    <a
+                                      key={idx}
+                                      href={paper.links[idx]}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      style={{
+                                        color: "#612512",
+                                        textDecoration: "underline",
+                                        fontWeight: isFranklyn
+                                          ? "bold"
+                                          : "normal",
+                                      }}
+                                      className="hover:text-[#245b6b] mr-1"
+                                    >
+                                      {authorElement}
+                                      {idx < arr.length - 1 ? "," : ""}
+                                    </a>
+                                  ) : (
+                                    <span key={idx} className="mr-1">
+                                      {authorElement}
+                                      {idx < arr.length - 1 ? "," : ""}
+                                    </span>
+                                  );
+                                })}
+                            </p>
+                          )}
+                        </div>
+
+                        {(paper.pmid || paper.doi) && (
+                          <div className="flex flex-col gap-1 text-sm">
+                            {paper.pmid && (
+                              <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center">
+                                PMID: {paper.pmid}
+                              </span>
+                            )}
+                            {paper.doi && (
+                              <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center">
+                                DOI: {paper.doi}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* ✅ Keep this one */}
+            <TabsContent value="chapters">
+              <div className="max-w-4xl mx-auto space-y-6">
+                {chapters.map((chapter, index) => (
+                  <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <p
+                            className="mb-5"
+                            style={{
+                              fontWeight: 300,
+                              color: "#31708F",
+                              fontSize: "20px",
+                            }}
+                          >
+                            {chapter.title}
+                          </p>
+                          <p
+                            className="mt-2 mb-2"
+                            style={{
+                              color: "#414141",
+                              fontWeight: 300,
+                              fontSize: "17px",
+                            }}
+                          >
+                            {chapter.chapter}
+                          </p>
                           <p
                             className="text-[14px] sm:text-[15px] leading-relaxed"
                             style={{
@@ -391,123 +495,22 @@ const Publications = () => {
                               opacity: 0.8,
                             }}
                           >
-                            <strong>Authors:</strong>{" "}
-                            {paper.authors
-                              .split(",")
-                              .map((author, idx, arr) => {
-                                const trimmedAuthor = author.trim();
-                                const isFranklyn =
-                                  /^(j(\.?|oshua)?\sfranklyn|franklyn\sj\.?)$/i.test(
-                                    trimmedAuthor
-                                  );
-
-                                const authorElement = isFranklyn ? (
-                                  <strong>{trimmedAuthor}</strong>
-                                ) : (
-                                  trimmedAuthor
-                                );
-
-                                return paper.links && paper.links[idx] ? (
-                                  <a
-                                    key={idx}
-                                    href={paper.links[idx]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                      color: "#612512",
-                                      textDecoration: "underline",
-                                      fontWeight: isFranklyn
-                                        ? "bold"
-                                        : "normal",
-                                    }}
-                                    className="hover:text-[#245b6b] mr-1"
-                                  >
-                                    {authorElement}
-                                    {idx < arr.length - 1 ? "," : ""}
-                                  </a>
-                                ) : (
-                                  <span key={idx} className="mr-1">
-                                    {authorElement}
-                                    {idx < arr.length - 1 ? "," : ""}
-                                  </span>
-                                );
-                              })}
+                            <strong>Authors:</strong> {chapter.authors}
                           </p>
+                        </div>
+                        {chapter.status && (
+                          <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
+                            {chapter.status}
+                          </span>
                         )}
                       </div>
-
-                      {(paper.pmid || paper.doi) && (
-                        <div className="flex flex-col gap-1 text-sm">
-                          {paper.pmid && (
-                            <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center">
-                              PMID: {paper.pmid}
-                            </span>
-                          )}
-                          {paper.doi && (
-                            <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full text-center">
-                              DOI: {paper.doi}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-
-          {/* ✅ Keep this one */}
-          <TabsContent value="chapters">
-            <div className="max-w-4xl mx-auto space-y-6">
-              {chapters.map((chapter, index) => (
-                <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <p
-                          className="mb-5"
-                          style={{
-                            fontWeight: 300,
-                            color: "#31708F",
-                            fontSize: "20px",
-                          }}
-                        >
-                          {chapter.title}
-                        </p>
-                        <p
-                          className="mt-2 mb-2"
-                          style={{
-                            color: "#414141",
-                            fontWeight: 300,
-                            fontSize: "17px",
-                          }}
-                        >
-                          {chapter.chapter}
-                        </p>
-                        <p
-                          className="text-[14px] sm:text-[15px] leading-relaxed"
-                          style={{
-                            color: "#612512",
-                            fontFamily: '"Montserrat", sans-serif',
-                            opacity: 0.8,
-                          }}
-                        >
-                          <strong>Authors:</strong> {chapter.authors}
-                        </p>
-                      </div>
-                      {chapter.status && (
-                        <span className="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
-                          {chapter.status}
-                        </span>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
     </main>
   );
