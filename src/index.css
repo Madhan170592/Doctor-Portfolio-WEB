@@ -138,9 +138,9 @@ All colors MUST be HSL.
 }
 @layer utilities {
   /* Default (large screens) */
-  .hero-container {
+  /* .hero-container {
     height: 80vh !important;
-  }
+  } */
 
   /* 📱 Mobile (below 768px) */
   @media (max-width: 767px) {
@@ -191,5 +191,17 @@ All colors MUST be HSL.
 
   .reveal.active {
     @apply opacity-100 translate-y-0;
+  }
+}
+
+
+@layer base {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

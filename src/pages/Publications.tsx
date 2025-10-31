@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FileText, BookOpen, Award, Bold } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { FileText, BookOpen } from "lucide-react";
 
 const Publications = () => {
   const chapters = [
@@ -36,81 +30,6 @@ const Publications = () => {
       status: "Commissioned",
     },
   ];
-
-  // const papers = [
-  //   {
-  //     title: 'Training the trainees in robotic surgery - a pilot scheme in the United Kingdom',
-  //     journal: 'BMC Medical Education',
-  //     date: 'April 2025',
-  //     authors: 'Mohammed Al-Ani, Joshua Franklyn, Vanash Patel',
-  //   },
-  //   {
-  //     title: 'Transitioning to da Vinci Xi for colorectal cancer surgery: a prospective cohort study of 102 cases',
-  //     journal: 'Journal of Robot Surgery',
-  //     date: 'September 2025',
-  //     authors: 'Samuel Massias, J Franklyn, Vanash Patel',
-  //   },
-  //   {
-  //     title: 'Long-term mental and physical quality of life outcomes following ileal pouch anal anastomosis surgery',
-  //     journal: 'Annals of the Royal College of Surgeons',
-  //     date: 'January 2025',
-  //     impactFactor: '1.2',
-  //     pmid: '38362797',
-  //   },
-  //   {
-  //     title: 'Immersive robotic colorectal training in the United Kingdom is safe and efficient',
-  //     journal: 'Annals of the Royal College of Surgeons',
-  //     date: 'December 2024',
-  //     impactFactor: '1.9',
-  //     authors: 'J Franklyn, S. Holtham, G. Farook',
-  //   },
-  //   {
-  //     title: 'Addressing mental and physical fatigue in major abdominal surgery by incorporating muscle stretches and hydration mini breaks',
-  //     journal: 'Annals of the Royal College of Surgeons',
-  //     date: 'January 2025',
-  //     impactFactor: '1.9',
-  //     authors: 'J. Franklyn, Brendan Moran, Tom. Cecil',
-  //   },
-  //   {
-  //     title: 'Colon cancer survival in the elderly without curative surgery',
-  //     journal: 'Annals of the Royal College of Surgeons',
-  //     date: 'September 2024',
-  //     impactFactor: '1.9',
-  //     pmid: '38404248',
-  //     authors: 'J Franklyn, I. Lindsey',
-  //   },
-  //   {
-  //     title: 'Geographical variations in long term colorectal cancer outcomes in England',
-  //     journal: 'Surgical Endoscopy',
-  //     date: 'March 2023',
-  //     impactFactor: '4.6',
-  //     pmid: '36991267',
-  //     authors: 'J Franklyn, Mark Coleman, Sebastian Smolarek',
-  //   },
-  //   {
-  //     title: 'Colorectal cancer outcomes determined by mode of presentation: analysis of population data in England',
-  //     journal: 'Techniques in Coloproctology',
-  //     date: 'January 2022',
-  //     impactFactor: '3.78',
-  //     pmid: '35084620',
-  //     authors: 'J Franklyn, J Lomax, P Labib, A Baker, J Hosking, B Moran, S Smolarek',
-  //   },
-  //   {
-  //     title: 'Abdominal wall reconstruction with tissue-engineered mesh using Muscle-Derived stem cells',
-  //     journal: 'Regenerative Engineering and Translational Medicine',
-  //     date: 'April 2022',
-  //     impactFactor: '2.2',
-  //     doi: '10.1007/s40883-022-00253-2',
-  //     authors: 'Joshua Franklyn, Sowmya Rames, Vrisha Madhuri, Inian Samarasam',
-  //   },
-  //   {
-  //     title: 'Young onset colorectal cancer: Insights based on a population-based study from England',
-  //     journal: 'Colorectal Disease',
-  //     date: 'April 2022',
-  //     impactFactor: '3.78',
-  //     pmid: '35437885',
-  //   },
-  // ];
 
   const peerReviewed = [
     {
@@ -231,7 +150,7 @@ const Publications = () => {
     {
       title:
         "Oncological outcomes of Obstructed locally advanced rectal cancer in a tertiary care Indian hospital. ",
-      journal: "       International Surgery journal Volume 6 No. 11 Nov 2018",
+      journal: "International Surgery journal Volume 6 No. 11 Nov 2018",
       authors:
         "Joshua Franklyn, Gigi Varghese, Rajat Raghunath, Tunny Sebastian, Mark Ranjan Jesudason",
     },
@@ -295,8 +214,9 @@ const Publications = () => {
   return (
     <main className="bg-white flex justify-center items-stretch min-h-screen">
       {/* Inner container with full-height FAF9F7 background */}
-      <div className="w-[95%] max-w-[1800px] bg-[#FAF9F7] min-h-screen px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-[100px] pb-24  flex flex-col justify-start">
-        <div className="max-w-[1200px] mx-auto w-full">
+      <div className="w-[95%] bg-[#FAF9F7] min-h-screen pt-[100px] pb-24 flex flex-col justify-start">
+        {/* Content aligned with header's inner container */}
+        <div className="w-[95%] max-w-[1200px] mx-auto pl-[12px]">
           {/* Header */}
           <section className="mb-16 text-center">
             <p
@@ -306,58 +226,38 @@ const Publications = () => {
                 fontSize: "28px",
               }}
             >
-              {" "}
               Publications
             </p>
             <p
               className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
               style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
             >
-              {" "}
               Contributions to surgical literature and medical education
             </p>
           </section>
 
-          {/* Stats */}
-          {/* <section className="mb-16">
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card className="glass-card text-center">
-              <CardContent className="pt-8 pb-8">
-                <div className="text-4xl font-bold text-secondary mb-2">21+</div>
-                <p className="text-muted-foreground">Peer-Reviewed Papers</p>
-              </CardContent>
-            </Card>
-            <Card className="glass-card text-center">
-              <CardContent className="pt-8 pb-8">
-                <div className="text-4xl font-bold text-secondary mb-2">4</div>
-                <p className="text-muted-foreground">Book Chapters</p>
-              </CardContent>
-            </Card>
-            <Card className="glass-card text-center">
-              <CardContent className="pt-8 pb-8">
-                <div className="text-4xl font-bold text-secondary mb-2">4.6</div>
-                <p className="text-muted-foreground">Highest Impact Factor</p>
-              </CardContent>
-            </Card>
-          </div>
-        </section> */}
-
           {/* Tabs for different publication types */}
           <Tabs defaultValue="papers" className="w-full">
-            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12">
-              <TabsTrigger value="papers">
+            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12 bg-transparent gap-4">
+              <TabsTrigger
+                value="papers"
+                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#31708F] border border-transparent data-[state=active]:border-[#31708F] transition"
+              >
                 <FileText className="mr-2 h-4 w-4" />
                 Papers
               </TabsTrigger>
-              <TabsTrigger value="chapters">
+
+              <TabsTrigger
+                value="chapters"
+                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#31708F] border border-transparent data-[state=active]:border-[#31708F] transition"
+              >
                 <BookOpen className="mr-2 h-4 w-4" />
                 Chapters
               </TabsTrigger>
             </TabsList>
 
-            {/* ✅ Keep this one */}
             <TabsContent value="papers">
-              <div className="max-w-4xl mx-auto space-y-6">
+              <div className="space-y-6">
                 {peerReviewed.map((paper, index) => (
                   <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
                     <CardContent className="p-6">
@@ -459,9 +359,8 @@ const Publications = () => {
               </div>
             </TabsContent>
 
-            {/* ✅ Keep this one */}
             <TabsContent value="chapters">
-              <div className="max-w-4xl mx-auto space-y-6">
+              <div className="space-y-6">
                 {chapters.map((chapter, index) => (
                   <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
                     <CardContent className="p-6">
