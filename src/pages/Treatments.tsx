@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 const Treatments = () => {
   const treatments = [
@@ -16,7 +15,7 @@ const Treatments = () => {
 
         I treat patients with <span class="font-bold">abdominal wall hernias</span> (inguinal and incisional hernias), 
         <span class="font-bold">bowel cancer</span>, <span class="font-bold">inflammatory bowel disease</span> 
-        (Crohn’s disease and ulcerative colitis), and <span class="font-bold">diverticular disease</span>. 
+        (Crohn's disease and ulcerative colitis), and <span class="font-bold">diverticular disease</span>. 
 
         My aim is always to use the <span class="font-bold">safest and most effective approach</span> to get you back to health 
         as <span class="font-bold">quickly and comfortably</span> as possible.
@@ -66,7 +65,7 @@ const Treatments = () => {
         "Fast access to diagnostic procedures for bowel symptoms and early cancer detection.",
       fullDesc: {
         paragraphs: [
-          `If you are experiencing <span class="font-bold">bowel symptoms</span> such as <span class="font-bold">persistent bleeding</span>, <span class="font-bold">changes in bowel habits</span>, <span class="font-bold">abdominal pain</span>, or <span class="font-bold">unexplained weight loss</span>, it’s important to investigate the cause promptly. <span class="font-bold">Early detection</span> can make a big difference, especially for conditions like <span class="font-bold">bowel cancer</span>, <span class="font-bold">polyps</span>, or <span class="font-bold">inflammatory bowel disease</span>.`,
+          `If you are experiencing <span class="font-bold">bowel symptoms</span> such as <span class="font-bold">persistent bleeding</span>, <span class="font-bold">changes in bowel habits</span>, <span class="font-bold">abdominal pain</span>, or <span class="font-bold">unexplained weight loss</span>, it's important to investigate the cause promptly. <span class="font-bold">Early detection</span> can make a big difference, especially for conditions like <span class="font-bold">bowel cancer</span>, <span class="font-bold">polyps</span>, or <span class="font-bold">inflammatory bowel disease</span>.`,
           `I perform <span class="font-bold">colonoscopy</span> and <span class="font-bold">sigmoidoscopy</span> to examine your bowel. A <span class="font-bold">colonoscopy</span> looks at the entire colon, while a <span class="font-bold">sigmoidoscopy</span> focuses on the lower part of the bowel (<span class="font-bold">rectum and sigmoid colon</span>). Both procedures use a <span class="font-bold">thin, flexible camera</span> passed gently through the bottom, allowing me to see any abnormalities clearly.`,
           `You remain awake during the procedure, but I ensure you are <span class="font-bold">comfortable and supported</span> throughout, with <span class="font-bold">sedation available</span> if needed. These investigations are <span class="font-bold">quick, safe</span>, and one of the most effective ways to <span class="font-bold">detect bowel problems early</span>, giving you the best chance of successful treatment.`,
         ],
@@ -75,130 +74,132 @@ const Treatments = () => {
   ];
 
   return (
-    <main className="bg-white flex justify-center items-stretch">
-      {/* Full height and dynamic FAF9F7 background */}
-      <div className="w-[95%] max-w-[1800px] bg-[#FAF9F7] min-h-screen px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 py-24  flex flex-col justify-start">
-        <div className="max-w-[1200px] mx-auto w-full">
-          {/* Header */}
-          <section className="mb-16 text-center mt-8">
-            <p
-              style={{
-                fontWeight: 300,
-                color: "#31708F",
-                fontSize: "28px",
-              }}
-            >
-              Treatments & Procedures
-            </p>
-            <p
-              className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-              style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
-            >
-              Advanced care. Personal attention. Peace of mind.
-            </p>
-          </section>
+    <main className="min-h-screen bg-white flex justify-center items-center pt-20">
+      {/* Inner Section - matches header width structure */}
+      <div className="w-[95%] bg-[#FAF9F7] min-h-screen py-12 flex items-center">
+        <div className="w-[95%] max-w-[1200px] mx-auto">
+          <div className="pl-[12px]">
+            {/* Header */}
+            <section className="mb-16 text-center mt-8">
+              <p
+                style={{
+                  fontWeight: 300,
+                  color: "#31708F",
+                  fontSize: "28px",
+                }}
+              >
+                Treatments & Procedures
+              </p>
+              <p
+                className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
+                style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
+              >
+                Advanced care. Personal attention. Peace of mind.
+              </p>
+            </section>
 
-          {/* Treatments Grid */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto">
-            {treatments.map((treatment) => (
-              <Card key={treatment.id} style={{ backgroundColor: "#FAF9F7" }}>
-                <CardContent className="p-6">
-                  <p
-                    className="uppercase tracking-wide mb-5"
-                    style={{ color: "#31708F", fontSize: "17px" }}
-                  >
-                    {treatment.category}
-                  </p>
+            {/* Treatments Grid */}
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {treatments.map((treatment) => (
+                <Card key={treatment.id} style={{ backgroundColor: "#FAF9F7" }}>
+                  <CardContent className="p-6">
+                    <p
+                      className="uppercase tracking-wide mb-5"
+                      style={{ color: "#31708F", fontSize: "17px" }}
+                    >
+                      {treatment.category}
+                    </p>
 
-                  <p
-                    style={{
-                      color: "#31708F",
-                      fontSize: "17px",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {treatment.title}
-                  </p>
+                    <p
+                      style={{
+                        color: "#31708F",
+                        fontSize: "17px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {treatment.title}
+                    </p>
 
-                  <p
-                    className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6"
-                    style={{
-                      color: "#414141",
-                      fontWeight: 300,
-                      fontSize: "15px",
-                    }}
-                  >
-                    {treatment.shortDesc}
-                  </p>
+                    <p
+                      className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6"
+                      style={{
+                        color: "#414141",
+                        fontWeight: 300,
+                        fontSize: "15px",
+                      }}
+                    >
+                      {treatment.shortDesc}
+                    </p>
 
-                  {/* Full Description */}
-                  <div className="space-y-4 leading-relaxed mt-6">
-                    {typeof treatment.fullDesc === "string" ? (
-                      <div
-                        className="text-[14px] sm:text-[15px] leading-relaxed"
-                        style={{
-                          color: "#612512",
-                          fontFamily: '"Montserrat", sans-serif',
-                          opacity: 0.8,
-                        }}
-                        dangerouslySetInnerHTML={{
-                          __html: treatment.fullDesc
-                            .split("\n\n")
-                            .map((p) => `<p>${p}</p>`)
-                            .join(""),
-                        }}
-                      />
-                    ) : (
-                      <>
-                        {treatment.fullDesc.paragraphs.map((p, idx) => (
-                          <p
-                            key={idx}
-                            className="text-[14px] sm:text-[15px] leading-relaxed"
-                            style={{
-                              color: "#612512",
-                              fontFamily: '"Montserrat", sans-serif',
-                              opacity: 0.8,
-                            }}
-                            dangerouslySetInnerHTML={{ __html: p }}
-                          />
-                        ))}
-
-                        {treatment.fullDesc.bullets && (
-                          <ul className="list-disc ml-5 space-y-2 text-[14px] sm:text-[15px]">
-                            {treatment.fullDesc.bullets.map((b, idx) => (
-                              <li
-                                key={idx}
-                                style={{
-                                  color: "#612512",
-                                  fontFamily: '"Montserrat", sans-serif',
-                                  opacity: 0.8,
-                                }}
-                                dangerouslySetInnerHTML={{ __html: b }}
-                              />
-                            ))}
-                          </ul>
-                        )}
-
-                        {treatment.fullDesc.paragraph &&
-                          treatment.fullDesc.paragraph.map((para, index) => (
+                    {/* Full Description */}
+                    <div className="space-y-4 leading-relaxed mt-6">
+                      {typeof treatment.fullDesc === "string" ? (
+                        <div
+                          className="text-[14px] sm:text-[15px] leading-relaxed"
+                          style={{
+                            color: "#612512",
+                            fontFamily: '"Montserrat", sans-serif',
+                            opacity: 0.8,
+                          }}
+                          dangerouslySetInnerHTML={{
+                            __html: treatment.fullDesc
+                              .split("\n\n")
+                              .map((p) => `<p>${p}</p>`)
+                              .join(""),
+                          }}
+                        />
+                      ) : (
+                        <>
+                          {treatment.fullDesc.paragraphs.map((p, idx) => (
                             <p
-                              key={index}
-                              className="text-[14px] sm:text-[15px] leading-relaxed mt-4"
+                              key={idx}
+                              className="text-[14px] sm:text-[15px] leading-relaxed"
                               style={{
                                 color: "#612512",
                                 fontFamily: '"Montserrat", sans-serif',
                                 opacity: 0.8,
                               }}
-                              dangerouslySetInnerHTML={{ __html: para }}
+                              dangerouslySetInnerHTML={{ __html: p }}
                             />
                           ))}
-                      </>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </section>
+
+                          {treatment.fullDesc.bullets && (
+                            <ul className="list-disc ml-5 space-y-2 text-[14px] sm:text-[15px]">
+                              {treatment.fullDesc.bullets.map((b, idx) => (
+                                <li
+                                  key={idx}
+                                  style={{
+                                    color: "#612512",
+                                    fontFamily: '"Montserrat", sans-serif',
+                                    opacity: 0.8,
+                                  }}
+                                  dangerouslySetInnerHTML={{ __html: b }}
+                                />
+                              ))}
+                            </ul>
+                          )}
+
+                          {treatment.fullDesc.paragraph &&
+                            treatment.fullDesc.paragraph.map((para, index) => (
+                              <p
+                                key={index}
+                                className="text-[14px] sm:text-[15px] leading-relaxed mt-4"
+                                style={{
+                                  color: "#612512",
+                                  fontFamily: '"Montserrat", sans-serif',
+                                  opacity: 0.8,
+                                }}
+                                dangerouslySetInnerHTML={{ __html: para }}
+                              />
+                            ))}
+                        </>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </section>
+          </div>
         </div>
       </div>
     </main>

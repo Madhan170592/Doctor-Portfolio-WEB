@@ -28,6 +28,7 @@ const contactSchema = z.object({
     .min(10, "Message must be at least 10 characters")
     .max(1000),
 });
+
 const contactInfo = [
   {
     icon: MapPin,
@@ -59,6 +60,7 @@ const contactInfo = [
     ],
   },
 ];
+
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 const Contact = () => {
@@ -92,125 +94,21 @@ const Contact = () => {
   };
 
   return (
-   <main className="bg-white min-h-screen flex justify-center items-stretch">
-  {/* Inner section with #FAF9F7 background */}
-  <div className="w-[95%] max-w-[1800px] bg-[#FAF9F7] min-h-screen flex flex-col shadow-sm overflow-hidden">
-  
-        {/* 👆 full viewport height minus padding top/bottom */}
-
-        {/* Banner */}
-        <div className="overflow-hidden ">
-          <img
-            src={contactImage}
-            alt="Contact Banner"
-            className="w-full h-[450px] object-cover object-center"
-          />
-        </div>
-
-        <div className="container mx-auto px-4 mt-6">
-          <div className="flex justify-center">
-            <div className="max-w-3xl w-full space-y-8 text-center">
-              {/* <p
-            style={{
-              fontWeight: 300,
-              color: "#31708F",
-              fontSize: "28px",
-
-            }}
-          >                    Get In Touch</p>
- <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6"
-            style={{ color: "#414141",fontWeight:300,fontSize:'20px' }}
-          >         Whether you have a question about treatments, insurance, fees, or would like to 
-      arrange a consultation, we're here to help. Most appointments are available within 
-      1–2 weeks.
-    </p> */}
-
-              {/* <Card
-  className="glass-card mx-auto text-left flex justify-center"
-  style={{ backgroundColor: '#FAF9F7' }}
->
-  <CardContent className="p-6 space-y-6 w-full max-w-md text-left">
-    <div className="flex items-start space-x-4">
-      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-        <MapPin className="text-secondary" size={20} />
-      </div>
-      <div>
-           <p
-            style={{
-              fontWeight: 300,
-              color: "#31708F",
-              fontSize: "17px",
-
-            }}
-          > Location</p>
-       <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
-            style={{ color: "#414141",fontWeight:300,fontSize:'15px' }}
-          >London, United Kingdom</p>
-      </div>
-    </div>
-
-    <div className="flex items-start space-x-4">
-      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-        <Mail className="text-secondary" size={20} />
-      </div>
-      <div>
-            <p
-            style={{
-              fontWeight: 300,
-              color: "#31708F",
-              fontSize: "17px",
-
-            }}
-          >Email</p>
-         <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
-            style={{ color: "#414141",fontWeight:300,fontSize:'15px' }}
-          >contact@joshuafranklyn.co.uk</p>
-      </div>
-    </div>
-
-    <div className="flex items-start space-x-4">
-      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-        <Phone className="text-secondary" size={20} />
-      </div>
-      <div>
-            <p
-            style={{
-              fontWeight: 300,
-              color: "#31708F",
-              fontSize: "17px",
-
-            }}
-          >Phone</p>
-         <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
-            style={{ color: "#414141",fontWeight:300,fontSize:'15px' }}
-          >
-          +44 1234 567890 <br /> Emergency: +44 1234 567891
-        </p>
-      </div>
-    </div>
-  </CardContent>
-</Card> */}
-
-              {/* <Card className="glass-card bg-secondary/5 mx-auto bg-[#FAF9F7]">
-      <CardContent className="p-6">
-        <h3 className="font-semibold text-primary mb-3 ">Self-Referral Welcome</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
-          You can self-refer directly without needing a GP referral. Simply contact us with 
-          a brief summary of your symptoms and relevant medical history. Our team will 
-          review and contact you to arrange an appointment.
-        </p>
-      </CardContent>
-    </Card> */}
+    <main className="bg-white min-h-screen flex justify-center items-center pt-20">
+      <div className="w-[95%] bg-[#FAF9F7] min-h-screen py-12 flex items-center">
+        <div className="w-[95%] max-w-[1200px] mx-auto">
+          <div className="pl-[12px]">
+            {/* Banner */}
+            <div className="overflow-hidden mb-6">
+              <img
+                src={contactImage}
+                alt="Contact Banner"
+                className="w-full h-[450px] object-cover object-center"
+              />
             </div>
-          </div>
 
-          {/* Two maps side by side */}
-          <section className="py-16 bg-gradient-subtle">
-            <div className="container mx-auto px-4">
+            {/* Two maps side by side */}
+            <section className="py-16">
               <div>
                 <p
                   className="text-center mb-8"
@@ -225,7 +123,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* 🏥 The New Foscote Hospital */}
-                  <div className=" overflow-hidden shadow-2xl h-[500px] flex flex-col">
+                  <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
                     <iframe
                       src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                       width="100%"
@@ -261,7 +159,7 @@ const Contact = () => {
                   </div>
 
                   {/* 🏥 Spire Harpenden Hospital */}
-                  <div className=" overflow-hidden shadow-2xl h-[500px] flex flex-col">
+                  <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
                     <iframe
                       src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                       width="100%"
@@ -297,37 +195,8 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-
-          {/* Single Centered Map */}
-          {/* <section className="py-16 bg-gradient-subtle">
-  <h2 className="text-3xl font-heading font-bold text-navy mb-10 text-center">
-    Find Us
-  </h2>
-
-  <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw]">
-    <Card className="w-full rounded-none overflow-hidden shadow-2xl">
-      <CardContent className="p-0">
-        <iframe
-          src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-          width="100%"
-          height="550"
-          style={{ border: 0 }}
-          scrolling="no"
-          allowFullScreen={false}
-          loading="lazy"
-          title="The New Foscote Hospital Map"
-        />
-      </CardContent>
-    </Card>
-  </div>
-</section>
-
-
-
-
-    */}
+            </section>
+          </div>
         </div>
       </div>
     </main>
