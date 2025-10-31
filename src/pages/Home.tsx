@@ -63,7 +63,16 @@ const Home = () => {
                 <img
                   src={heroImage}
                   alt="Dr. Joshua Franklyn"
-                  className="absolute inset-0 w-full h-full object-cover object-center "
+                  // className="absolute inset-0 w-full h-full object-cover object-center "
+
+                  className="
+    absolute inset-0 w-full h-full
+    object-cover
+    object-[35%_center]   
+    md:object-center      
+    scale-[1.25]         
+    md:scale-100
+  "
                 />
 
                 <div className="absolute inset-0 bg-white/80 md:bg-white/60"></div>
