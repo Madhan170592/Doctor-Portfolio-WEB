@@ -100,7 +100,7 @@ const Footer = () => {
                   size={18}
                   className="text-[#FAF9F7] mt-0.5 flex-shrink-0"
                 />
-                <span className="text-sm">Available upon consultation</span>
+                <span className="text-sm">+447 480734964</span>
               </li>
               {/* <li className="flex items-start space-x-3">
                 <Mail size={18} className="text-[#FAF9F7] mt-0.5 flex-shrink-0" />
