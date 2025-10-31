@@ -9,7 +9,7 @@ const About = () => {
           <section className="grid md:grid-cols-2 gap-12 items-start w-full my-20 pl-[12px]">
             {/* Left Column - Text - Aligned with logo */}
             <div>
-              <div className="flex items-baseline justify-start">
+              {/* <div className="flex items-baseline justify-start">
                 <h2
                   style={{
                     fontFamily: '"Work Sans", sans-serif',
@@ -30,7 +30,34 @@ const About = () => {
                     MS FRCS
                   </span>
                 </h3>
-              </div>
+              </div> */}
+              <div className="flex items-baseline justify-start flex-wrap">
+  <h2
+    style={{
+      fontFamily: '"Work Sans", sans-serif',
+      fontSize: "26px",
+      color: "#31708F",
+      fontWeight: 395,
+    }}
+  >
+    About Joshua Franklyn
+  </h2>
+
+  {/* MS FRCS inline always */}
+  <span
+    className="text-[17px] font-light ml-2"
+    style={{ color: "#31708F" }}
+  >
+    MS
+  </span>
+  <span
+    className="text-[17px] font-light ml-1"
+    style={{ color: "#31708F" }}
+  >
+    FRCS
+  </span>
+</div>
+
 
               <div className="space-y-4 leading-relaxed mt-6">
                 <p

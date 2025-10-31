@@ -130,7 +130,7 @@ const Footer = () => {
             <p className="text-sm">
               © {currentYear} Joshua Franklyn. All rights reserved.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <Link
                 to="/privacy"
                 target="_blank"
@@ -147,7 +147,7 @@ const Footer = () => {
               >
                 Terms of Service
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
