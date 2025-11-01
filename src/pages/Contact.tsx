@@ -124,16 +124,34 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* 🏥 The New Foscote Hospital */}
                   <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
-                    <iframe
-                      src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      scrolling="no"
-                      allowFullScreen={true}
-                      loading="lazy"
-                      title="The New Foscote Hospital Map"
-                    />
+                    {/* Desktop - Bing Maps */}
+                    <div className="hidden md:block w-full h-full">
+                      <iframe
+                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        scrolling="no"
+                        allowFullScreen={true}
+                        loading="lazy"
+                        title="The New Foscote Hospital Map"
+                      />
+                    </div>
+
+                    {/* Mobile - Google Maps */}
+                    <div className="block md:hidden w-full h-full">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.123456789012!2d-1.330978!3d52.053349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDAzJzEyLjEiTiAxwrAxOSc1MS41Ilc!5e0!3m2!1sen!2suk!4v1234567890"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="The New Foscote Hospital Map"
+                      />
+                    </div>
+
                     <div className="bg-white py-3 text-center">
                       <a
                         href="https://thefoscotehospital.co.uk/"
@@ -160,16 +178,34 @@ const Contact = () => {
 
                   {/* 🏥 Spire Harpenden Hospital */}
                   <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
-                    <iframe
-                      src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      scrolling="no"
-                      allowFullScreen={true}
-                      loading="lazy"
-                      title="Spire Harpenden Hospital Map"
-                    />
+                    {/* Desktop - Bing Maps */}
+                    <div className="hidden md:block w-full h-full">
+                      <iframe
+                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        scrolling="no"
+                        allowFullScreen={true}
+                        loading="lazy"
+                        title="Spire Harpenden Hospital Map"
+                      />
+                    </div>
+
+                    {/* Mobile - Google Maps */}
+                    <div className="block md:hidden w-full h-full">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2467.654321098765!2d-0.360145!3d51.828018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDQ5JzQwLjkiTiAwwrAyMSczNi41Ilc!5e0!3m2!1sen!2suk!4v1234567891"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Spire Harpenden Hospital Map"
+                      />
+                    </div>
+
                     <div className="bg-white py-3 text-center">
                       <a
                         href="https://www.spirehealthcare.com/"
