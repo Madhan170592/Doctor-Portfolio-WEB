@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -62,9 +61,11 @@ const Header = () => {
                 src={jfLogo}
                 alt="logo"
                 className=" object-contain"
-                style={{ height: 40, width: 40 ,}}
+                style={{ height: 40, width: 40 }}
               />
-              <span className="text-[11px] lg:text-xs xl:text-base font-medium whitespace-nowrap">Joshua Franklin Consultant Surgeon</span>
+              <span className="text-[11px] lg:text-xs xl:text-base font-medium whitespace-nowrap text-[#1E5089]">
+                Joshua Franklin Consultant Surgeon
+              </span>
             </Link>
 
             {/* Desktop Navigation - Increased gap between links */}
