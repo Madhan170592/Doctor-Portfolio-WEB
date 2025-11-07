@@ -61,21 +61,20 @@ const Header = () => {
                 src={jfLogo}
                 alt="logo"
                 className=" object-contain"
-                style={{ height: 40, width: 40 ,}}
+                style={{ height: 40, width: 40 }}
               />
-              <span className="text-sm md:text-base font-medium ">Joshua Franklin Consultant Surgeon</span>
+              <span className="text-[11px] lg:text-xs xl:text-base font-medium whitespace-nowrap text-[#1E5089]">
+                Joshua Franklin Consultant Surgeon
+              </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            {/* <div className="hidden lg:flex items-center justify-end gap-9 xl:gap-12 flex-wrap"> */}
-              <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-10 flex-wrap">
-            {/* <div className="hidden lg:flex items-center justify-end gap-10 xl:gap-14 flex-wrap"> */}
-
+            {/* Desktop Navigation - Increased gap between links */}
+            <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 ml-6 xl:ml-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`text-sm font-light transition-colors hover:text-[#1E5089] ${
+                  className={`text-[11px] lg:text-xs xl:text-sm font-light transition-colors hover:text-[#1E5089] whitespace-nowrap ${
                     location.pathname === link.to
                       ? "text-[#1E5089]"
                       : "text-[#414141]"
@@ -90,7 +89,7 @@ const Header = () => {
               <div className="relative" ref={dropdownRef}>
                 <Button
                   variant="outline"
-                  className="py-4  mt-4 mb-4 px-0 w-[180px] transition-all duration-300 border border-[#1E5089] text-[#1E5089] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+                  className="py-2 px-0 w-[140px] lg:w-[150px] xl:w-[180px] text-[11px] lg:text-xs xl:text-sm transition-all duration-300 border border-[#1E5089] text-[#1E5089] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)] whitespace-nowrap"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   Book Appointment
@@ -182,6 +181,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
