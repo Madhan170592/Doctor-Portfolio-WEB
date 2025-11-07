@@ -84,7 +84,7 @@ const InsuranceFees = () => {
             <p
               style={{
                 fontWeight: 300,
-                color: "#31708F",
+                color: "#1E5089",
                 fontSize: "28px",
               }}
             >
@@ -110,7 +110,7 @@ const InsuranceFees = () => {
                     className="text-center mb-6"
                     style={{
                       fontWeight: 300,
-                      color: "#31708F",
+                      color: "#1E5089",
                       fontSize: "28px",
                     }}
                   >
