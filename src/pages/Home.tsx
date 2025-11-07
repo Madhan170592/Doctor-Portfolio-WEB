@@ -268,7 +268,7 @@ const Home = () => {
                   >
                     Mr Joshua Franklyn is a consultant General and Colorectal
                     Surgeon working in Hertfordshire and Oxfordshire.{" "}
-                    <span className="font-bold">Mr. Franklyn</span> believes in
+                    <span>Mr. Franklyn</span> believes in
                     building a strong, trusting relationship with each patient,
                     ensuring you feel heard and cared for throughout your
                     treatment while receiving timely, effective care.
