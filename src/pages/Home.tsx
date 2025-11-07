@@ -158,7 +158,7 @@ const Home = () => {
                   className="absolute inset-0 pl-3 w-full h-[70%] sm:h-[50%] md:h-[85%] object-cover object-[63%_center] md:object-center"
                 />
 
-                <div className="absolute inset-0 flex flex-col items-center text-center md:items-start md:text-left xl:pt-4 sm:pt-12 md:pt-10 md:mt-8 z-20 pl-0 md:pl-[12px]">
+                <div className="absolute inset-0 flex flex-col items-center text-center md:items-start md:text-left xl:pt-4 sm:pt-12 md:pt-10 md:mt-5 z-20 pl-0 md:pl-[12px]">
                   <div
                     className="max-w-xl w-full md:ml-0 sm:ml-0 ml-0 px-4 md:px-8 "
                     style={{ marginLeft: "0px" }}
