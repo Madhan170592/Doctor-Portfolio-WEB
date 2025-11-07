@@ -222,18 +222,18 @@ const Publications = () => {
             <p
               style={{
                 fontWeight: 300,
-                color: "#31708F",
+                color: "#1E5089",
                 fontSize: "28px",
               }}
             >
-              Publications
+             Research
             </p>
-            <p
+            {/* <p
               className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
               style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
             >
               Contributions to surgical literature and medical education
-            </p>
+            </p> */}
           </section>
 
           {/* Tabs for different publication types */}
@@ -241,18 +241,18 @@ const Publications = () => {
             <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12 bg-transparent gap-4">
               <TabsTrigger
                 value="papers"
-                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#31708F] border border-transparent data-[state=active]:border-[#31708F] transition"
+                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#1E5089] border border-transparent data-[state=active]:border-[#1E5089] transition"
               >
                 <FileText className="mr-2 h-4 w-4" />
-                Papers
+               Scientific Publications
               </TabsTrigger>
 
               <TabsTrigger
                 value="chapters"
-                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#31708F] border border-transparent data-[state=active]:border-[#31708F] transition"
+                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#1E5089] border border-transparent data-[state=active]:border-[#1E5089] transition"
               >
                 <BookOpen className="mr-2 h-4 w-4" />
-                Chapters
+               Text Book Chapters
               </TabsTrigger>
             </TabsList>
 
@@ -267,7 +267,7 @@ const Publications = () => {
                             className="mb-5"
                             style={{
                               fontWeight: 300,
-                              color: "#31708F",
+                              color: "#1E5089",
                               fontSize: "20px",
                             }}
                           >
@@ -284,7 +284,7 @@ const Publications = () => {
                             {paper.journal}
                           </p>
 
-                          {paper.authors && (
+                          {/* {paper.authors && (
                             <p
                               className="text-[14px] sm:text-[15px] leading-relaxed"
                               style={{
@@ -335,7 +335,7 @@ const Publications = () => {
                                   );
                                 })}
                             </p>
-                          )}
+                          )} */}
                         </div>
 
                         {(paper.pmid || paper.doi) && (
@@ -370,7 +370,7 @@ const Publications = () => {
                             className="mb-5"
                             style={{
                               fontWeight: 300,
-                              color: "#31708F",
+                              color: "#1E5089",
                               fontSize: "20px",
                             }}
                           >

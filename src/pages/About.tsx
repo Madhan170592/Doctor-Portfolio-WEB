@@ -1,4 +1,4 @@
-import aboutFranklyn from "@/assets/about Dr.Josua Franklyn.jpg";
+import aboutFranklyn from "@/assets/joshua-garden.png";
 
 const About = () => {
   return (
@@ -36,23 +36,23 @@ const About = () => {
     style={{
       fontFamily: '"Work Sans", sans-serif',
       fontSize: "26px",
-      color: "#31708F",
+      color: "#1E5089",
       fontWeight: 395,
     }}
   >
-    About Joshua Franklyn
+    Joshua Franklyn
   </h2>
 
   {/* MS FRCS inline always */}
   <span
     className="text-[17px] font-light ml-2"
-    style={{ color: "#31708F" }}
+    style={{ color: "#1E5089" }}
   >
     MS
   </span>
   <span
     className="text-[17px] font-light ml-1"
-    style={{ color: "#31708F" }}
+    style={{ color: "#1E5089" }}
   >
     FRCS
   </span>
@@ -68,7 +68,7 @@ const About = () => {
                     opacity: 0.8,
                   }}
                 >
-                  I'm a Consultant General and Colorectal Surgeon with a
+                  I am a Consultant General and Colorectal Surgeon with a
                   specialist interest in robotic colorectal surgery. My focus is
                   on providing safe, personalised care in a timely manner —
                   ensuring that every treatment decision is made together with
@@ -84,32 +84,32 @@ const About = () => {
                   }}
                 >
                   I currently work as an NHS Consultant at West Hertfordshire
-                  Teaching Hospitals and privately.
+                  Teaching Hospitals and privately. Alongside my clinical work, I am passionate about teaching and
+                  training the next generation of surgeons. I serve as the{" "}
+                  <span >Undergraduate Surgical Lead</span>{" "}
+                  at{" "}
+                  <span >
+                    University College London (UCL)
+                  </span>{" "}
+                  and previously worked as an{" "}
+                  <span >
+                    Assistant Professor of Surgery
+                  </span>{" "}
+                  at Christian Medical College (CMC) Vellore.
                 </p>
 
-                <p
+                {/* <p
                   className="text-[14px] sm:text-[15px]"
                   style={{
                     color: "#612512",
                     fontFamily: '"Montserrat", sans-serif',
                     opacity: 0.8,
                   }}
-                >
-                  Alongside my clinical work, I'm passionate about teaching and
-                  training the next generation of surgeons. I serve as the{" "}
-                  <span className="font-bold">Undergraduate Surgical Lead</span>{" "}
-                  at{" "}
-                  <span className="font-bold">
-                    University College London (UCL)
-                  </span>{" "}
-                  and previously worked as an{" "}
-                  <span className="font-bold">
-                    Assistant Professor of Surgery
-                  </span>{" "}
-                  at Christian Medical College (CMC) Vellore.
-                </p>
+                > */}
+                 
+                {/* </p> */}
 
-                <p
+                {/* <p
                   className="text-[14px] sm:text-[15px]"
                   style={{
                     color: "#612512",
@@ -121,7 +121,7 @@ const About = () => {
                   shape my practice. I have authored over 20 peer-reviewed
                   publications, presented at international conferences, and
                   contributed to several surgical textbooks.
-                </p>
+                </p> */}
 
                 <p
                   className="text-[14px] sm:text-[15px]"
@@ -132,15 +132,15 @@ const About = () => {
                   }}
                 >
                   I am a{" "}
-                  <span className="font-bold">
+                  <span >
                     Fellow of the Royal College of Surgeons (FRCS)
                   </span>{" "}
                   and an active member of both the{" "}
-                  <span className="font-bold">
+                  <span >
                     Association of Coloproctology of Great Britain & Ireland
                   </span>{" "}
                   and the{" "}
-                  <span className="font-bold">
+                  <span >
                     European Society of Coloproctology
                   </span>
                   .

@@ -94,7 +94,7 @@ const Contact = () => {
   };
 
   return (
-    <main className="bg-white min-h-screen flex justify-center items-center pt-20">
+    <main className="bg-white min-h-screen flex justify-center items-center ">
       <div className="w-[95%] bg-[#FAF9F7] min-h-screen py-12 flex items-center">
         <div className="w-[95%] max-w-[1200px] mx-auto">
           <div className="pl-[12px]">
@@ -114,7 +114,7 @@ const Contact = () => {
                   className="text-center mb-8"
                   style={{
                     fontWeight: 300,
-                    color: "#31708F",
+                    color: "#1E5089",
                     fontSize: "28px",
                   }}
                 >
@@ -157,13 +157,13 @@ const Contact = () => {
                         href="https://thefoscotehospital.co.uk/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lg font-semibold text-[#31708F] hover:underline hover:text-[#25576b] transition-colors"
+                        className="text-lg font-semibold text-[#1E5089] hover:underline hover:text-[#25576b] transition-colors"
                       >
                         <p
                           className="text-center"
                           style={{
                             fontWeight: 300,
-                            color: "#31708F",
+                            color: "#1E5089",
                             fontSize: "17px",
                           }}
                         >
@@ -211,13 +211,13 @@ const Contact = () => {
                         href="https://www.spirehealthcare.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lg font-semibold text-[#31708F] hover:underline hover:text-[#25576b] transition-colors"
+                        className="text-lg font-semibold text-[#1E5089] hover:underline hover:text-[#25576b] transition-colors"
                       >
                         <p
                           className="text-center"
                           style={{
                             fontWeight: 300,
-                            color: "#31708F",
+                            color: "#1E5089",
                             fontSize: "17px",
                           }}
                         >
