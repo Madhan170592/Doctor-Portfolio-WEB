@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import jfLogo from "@/assets/favicon-removebg-preview.png";
+import jfLogo from "@/assets/logo_jf__1_-removebg-preview.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,38 +42,42 @@ const Header = () => {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/treatments", label: "Treatments" },
-    { to: "/publications", label: "Publications" },
+    { to: "/research", label: "Research" },
     { to: "/insurance-fees", label: "Insurance & Fees" },
     { to: "/contact", label: "Contact" },
   ];
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center bg-white transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center bg-white transition-all duration-300  bg-[#FAF9F7] "
       style={{ width: "100%" }}
     >
-      <div className="w-[95%] bg-[#FAF9F7]">
-        <div className="w-[95%] max-w-[1200px] mx-auto">
+      <div className="w-[95%] bg-[#FAF9F7] ">
+        <div className="w-[95%] max-w-[1200px] mx-auto mb-4">
           <nav className="flex items-center justify-between py-2 pl-[12px]">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2 ">
               <img
                 src={jfLogo}
                 alt="logo"
-                className="rounded-full object-cover"
-                style={{ height: 65, width: 65 ,paddingRight:'30px'}}
+                className=" object-contain"
+                style={{ height: 40, width: 40 ,}}
               />
+              <span className="text-sm md:text-base font-medium ">Joshua Franklin Consultant Surgeon</span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-10 flex-wrap">
+            {/* <div className="hidden lg:flex items-center justify-end gap-9 xl:gap-12 flex-wrap"> */}
+              <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-10 flex-wrap">
+            {/* <div className="hidden lg:flex items-center justify-end gap-10 xl:gap-14 flex-wrap"> */}
+
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`text-sm font-light transition-colors hover:text-[#31708F] ${
+                  className={`text-sm font-light transition-colors hover:text-[#1E5089] ${
                     location.pathname === link.to
-                      ? "text-[#31708F]"
+                      ? "text-[#1E5089]"
                       : "text-[#414141]"
                   }`}
                   style={{ fontFamily: '"Montserrat", sans-serif' }}
@@ -86,7 +90,7 @@ const Header = () => {
               <div className="relative" ref={dropdownRef}>
                 <Button
                   variant="outline"
-                  className="py-4 px-0 w-[180px] transition-all duration-300 border border-[#31708F] text-[#31708F] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+                  className="py-4  mt-4 mb-4 px-0 w-[180px] transition-all duration-300 border border-[#1E5089] text-[#1E5089] hover:text-white hover:bg-[#00000040] hover:border-none hover:shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   Book Appointment
@@ -100,7 +104,7 @@ const Header = () => {
                         href={hospital.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#31708F]/10 hover:text-[#31708F]"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#1E5089]/10 hover:text-[#1E5089]"
                         onClick={() => setIsDropdownOpen(false)}
                       >
                         {hospital.name}
@@ -128,9 +132,9 @@ const Header = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`block font-light transition-colors hover:text-[#31708F] ${
+                  className={`block font-light transition-colors hover:text-[#1E5089] ${
                     location.pathname === link.to
-                      ? "text-[#31708F]"
+                      ? "text-[#1E5089]"
                       : "text-[#414141]"
                   }`}
                   style={{ fontFamily: '"Montserrat", sans-serif' }}
@@ -143,7 +147,7 @@ const Header = () => {
               <div className="relative" ref={dropdownRef}>
                 <Button
                   variant="outline"
-                  className="w-full border-[#31708F] text-[#31708F] hover:bg-[#31708F] hover:text-white"
+                  className="w-full border-[#1E5089] text-[#1E5089] hover:bg-[#1E5089] hover:text-white"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   Book Appointment
@@ -157,7 +161,7 @@ const Header = () => {
                         href={hospital.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#31708F]/10 hover:text-[#31708F]"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#1E5089]/10 hover:text-[#1E5089]"
                         onClick={() => {
                           setIsDropdownOpen(false);
                           setIsMobileMenuOpen(false);
