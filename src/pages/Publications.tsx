@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, BookOpen } from "lucide-react";
@@ -218,7 +218,7 @@ const Publications = () => {
         {/* Content aligned with header's inner container */}
         <div className="w-[95%] max-w-[1200px] mx-auto pl-[12px]">
           {/* Header */}
-          <section className="mb-16 text-center">
+          <section className="mb-10 text-center">
             <p
               style={{
                 fontWeight: 300,
@@ -228,28 +228,22 @@ const Publications = () => {
             >
              Research
             </p>
-            {/* <p
-              className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-              style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
-            >
-              Contributions to surgical literature and medical education
-            </p> */}
           </section>
 
           {/* Tabs for different publication types */}
-          <Tabs defaultValue="papers" className="w-full">
-            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-12 bg-transparent gap-4">
+          <Tabs defaultValue="papers" className="w-full ">
+            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-1 md:grid-cols-2 mb-20  bg-transparent gap-4">
               <TabsTrigger
                 value="papers"
                 className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#1E5089] border border-transparent data-[state=active]:border-[#1E5089] transition"
               >
-                <FileText className="mr-2 h-4 w-4" />
+                <FileText className="h-4 w-4 mr-2" />
                Scientific Publications
               </TabsTrigger>
 
               <TabsTrigger
                 value="chapters"
-                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#1E5089] border border-transparent data-[state=active]:border-[#1E5089] transition"
+                className="rounded-xl py-3 shadow-sm data-[state=active]:bg-[#FAF9F7] data-[state=active]:text-[#1E5089] border border-transparent data-[state=active]:border-[#1E5089] transition "
               >
                 <BookOpen className="mr-2 h-4 w-4" />
                Text Book Chapters
@@ -257,7 +251,7 @@ const Publications = () => {
             </TabsList>
 
             <TabsContent value="papers">
-              <div className="space-y-6">
+              <div className="space-y-6 pt-5 md:pt-0">
                 {peerReviewed.map((paper, index) => (
                   <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
                     <CardContent className="p-6">
@@ -283,59 +277,6 @@ const Publications = () => {
                           >
                             {paper.journal}
                           </p>
-
-                          {/* {paper.authors && (
-                            <p
-                              className="text-[14px] sm:text-[15px] leading-relaxed"
-                              style={{
-                                color: "#612512",
-                                fontFamily: '"Montserrat", sans-serif',
-                                opacity: 0.8,
-                              }}
-                            >
-                              <strong>Authors:</strong>{" "}
-                              {paper.authors
-                                .split(",")
-                                .map((author, idx, arr) => {
-                                  const trimmedAuthor = author.trim();
-                                  const isFranklyn =
-                                    /^(j(\.?|oshua)?\sfranklyn|franklyn\sj\.?)$/i.test(
-                                      trimmedAuthor
-                                    );
-
-                                  const authorElement = isFranklyn ? (
-                                    <strong>{trimmedAuthor}</strong>
-                                  ) : (
-                                    trimmedAuthor
-                                  );
-
-                                  return paper.links && paper.links[idx] ? (
-                                    <a
-                                      key={idx}
-                                      href={paper.links[idx]}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      style={{
-                                        color: "#612512",
-                                        textDecoration: "underline",
-                                        fontWeight: isFranklyn
-                                          ? "bold"
-                                          : "normal",
-                                      }}
-                                      className="hover:text-[#245b6b] mr-1"
-                                    >
-                                      {authorElement}
-                                      {idx < arr.length - 1 ? "," : ""}
-                                    </a>
-                                  ) : (
-                                    <span key={idx} className="mr-1">
-                                      {authorElement}
-                                      {idx < arr.length - 1 ? "," : ""}
-                                    </span>
-                                  );
-                                })}
-                            </p>
-                          )} */}
                         </div>
 
                         {(paper.pmid || paper.doi) && (
@@ -360,7 +301,7 @@ const Publications = () => {
             </TabsContent>
 
             <TabsContent value="chapters">
-              <div className="space-y-6">
+              <div className="space-y-6 pt-5 md:pt-0">
                 {chapters.map((chapter, index) => (
                   <Card key={index} style={{ backgroundColor: "#FAF9F7" }}>
                     <CardContent className="p-6">

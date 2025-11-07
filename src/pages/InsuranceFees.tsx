@@ -59,15 +59,15 @@ const InsuranceFees = () => {
       question: "What is the referral process?",
       answer: [
         <>
-          Whether you come through your <span className="font-bold">GP</span> or
+          Whether you come through your <span >GP</span> or
           refer yourself, we'll make the process as simple and stress-free as
           possible.
         </>,
         <>
-          You can see <span className="font-bold">Mr Joshua Franklyn</span>{" "}
-          either <span className="font-bold">with a referral</span> from your GP
+          You can see <span >Mr Joshua Franklyn</span>{" "}
+          either <span>with a referral</span> from your GP
           or another doctor, or you can{" "}
-          <span className="font-bold">self-refer</span> directly.
+          <span >self-refer</span> directly.
         </>,
         "If you'd like to self-refer, please email a short summary of your symptoms and any relevant medical history to our friendly team. They will review your information and contact you to arrange an appointment at a time that suits you.",
       ],
