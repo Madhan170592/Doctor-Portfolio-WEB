@@ -64,7 +64,7 @@ const Header = () => {
                 style={{ height: 40, width: 40 }}
               />
               <span className="text-[11px] lg:text-xs xl:text-base font-medium whitespace-nowrap text-[#1E5089]">
-                Joshua Franklin Consultant Surgeon
+                Joshua Franklyn Consultant Surgeon
               </span>
             </Link>
 
