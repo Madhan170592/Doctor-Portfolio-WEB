@@ -53,7 +53,7 @@ const Header = () => {
       style={{ width: "100%" }}
     >
       <div className="w-[95%] bg-[#FAF9F7] ">
-        <div className="w-[95%] max-w-[1200px] mx-auto mb-4">
+        <div className="w-[95%] max-w-[1200px] mx-auto mt-4 mb-4">
           <nav className="flex items-center justify-between py-2 pl-[12px]">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 ">
