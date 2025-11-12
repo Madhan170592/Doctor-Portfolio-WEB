@@ -103,7 +103,7 @@ const Contact = () => {
               <img
                 src={contactImage}
                 alt="Contact Banner"
-                className="w-full h-[450px] object-cover object-center"
+                className="w-full h-[350px] object-cover object-center"
               />
             </div>
 

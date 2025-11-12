@@ -205,3 +205,36 @@ All colors MUST be HSL.
     scrollbar-width: none;
   }
 }
+
+@media (max-width: 1229px) and (min-width: 1024px) {
+  .hero-image-custom {
+    height: 330px !important; /* adjust as you like */
+   
+  }
+}
+@media (max-width: 1229px) and (min-width: 1024px) {
+  .hero-text-adjust {
+    margin-top: -20px !important; /* reduce or adjust as you like */
+    padding-top: -20px !important;
+    
+  }
+  .hero-General-adjust{
+     margin-top: -33px !important; 
+    padding-top: -33px !important;
+  }
+}
+@media (max-width: 1229px) {
+  .hero-margin-fix {
+    margin-top:-200px;
+  }
+}
+@media  (max-width: 1397px) {
+  .hero-margin-fix {
+    margin-top: -200px;
+  }
+}
+@media (max-width: 1024px) {
+  .hero-margin-fix {
+    margin-top:-20px;
+  }
+}
