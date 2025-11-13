@@ -69,7 +69,8 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation - Increased gap between links */}
-            <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 ml-6 xl:ml-10">
+            {/* <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 ml-3 xl:ml-10 md:gap-10"> */}
+            <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 ml-3 xl:ml-10 [@media(min-width:1225px)]:gap-10 [@media(min-width:1163px)]:gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
