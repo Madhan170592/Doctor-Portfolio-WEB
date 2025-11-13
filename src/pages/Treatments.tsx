@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const Treatments = () => {
   const treatments = [
-   
     {
       id: "anorectal",
       title: "Anorectal Conditions",
@@ -37,16 +36,16 @@ const Treatments = () => {
         paragraphs: [
           `If you are experiencing <span >bowel symptoms</span> such as <span>persistent bleeding</span>, <span >changes in bowel habits</span>, <span>abdominal pain</span>, or <span>unexplained weight loss</span>, it's important to investigate the cause promptly. <span>Early detection</span> can make a big difference, especially for conditions like <span>bowel cancer</span>, <span>polyps</span>, or <span>inflammatory bowel disease</span>.`,
           `I perform <span>colonoscopy</span> and <span >sigmoidoscopy</span> to examine your bowel. A <span >colonoscopy</span> looks at the entire colon, while a <span>sigmoidoscopy</span> focuses on the lower part of the bowel (<span>rectum and sigmoid colon</span>). Both procedures use a <span>thin, flexible camera</span> passed gently through the bottom, allowing me to see any abnormalities clearly.`,
-          `You remain awake during the procedure, but I ensure you are <span>comfortable and supported</span> throughout, with <span>sedation available</span> if needed. These investigations are <span>quick, safe</span>, and one of the most effective ways to <span>detect bowel problems early</span>, giving you the best chance of successful treatment.`,
+          // `You remain awake during the procedure, but I ensure you are <span>comfortable and supported</span> throughout, with <span>sedation available</span> if needed. These investigations are <span>quick, safe</span>, and one of the most effective ways to <span>detect bowel problems early</span>, giving you the best chance of successful treatment.`,
         ],
       },
     },
-     {
+    {
       id: "robotic",
-      title: "Robotic Surgery",
+      title: "Robotic* and Laparoscopic Surgery ",
       category: "Advanced Surgical Techniques",
       shortDesc:
-        "State-of-the-art keyhole surgical techniques for bowel conditions with minimal pain and faster recovery.",
+        "State-of-the-art keyhole surgical techniques for faster recovery with minimal pain. ",
       fullDesc: `
         I use the latest <span >keyhole surgical techniques</span> to treat many <span >bowel conditions</span>. 
         This type of surgery is <span >less painful</span>, usually means a <span >shorter stay in hospital</span>, 
@@ -56,20 +55,21 @@ const Treatments = () => {
         <span >bowel cancer</span>, <span >inflammatory bowel disease</span> 
         (Crohn's disease and ulcerative colitis), and <span >diverticular disease</span>. 
 
-        My aim is always to use the <span>safest and most effective approach</span> to get you back to health 
-        as <span>quickly and comfortably</span> as possible.
+      <br/>
+       <i> (*Robotic surgery is offered only in hospitals where robotic systems are available and when clinically appropriate based on individual patient evaluation.) </i>
       `,
     },
     {
       id: "hernia",
       title: "Hernia Repair",
-      category: "Robotic & Keyhole Surgery",
+      category: "Hernia Repair",
       shortDesc:
-        "Expert robotic and open hernia repair for inguinal, umbilical, and incisional hernias.",
+        "Inguinal, Umbilical,  incision and Parastomal hernia repair. ",
       fullDesc: `
-        I offer robotic and open hernia repair. Whether you have an inguinal, umbilical, or incisional hernia, 
-        my main objective is to treat the condition in a timely and safe manner so you can return to your normal activities 
-        more quickly and with greater comfort.
+       I offer robotic* and open hernia repair. Whether you have an inguinal, umbilical, or incisional hernia, my main objective is to treat the condition in a timely and safe manner so you can return to your normal activities more quickly and with greater comfort. 
+<br/>
+<br/>
+<i>(*Robotic surgery is offered only in hospitals where robotic systems are available and when clinically appropriate based on individual patient evaluation.)</i>
       `,
     },
   ];
@@ -91,12 +91,6 @@ const Treatments = () => {
               >
                 Treatments & Procedures
               </p>
-              {/* <p
-                className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8"
-                style={{ color: "#414141", fontWeight: 300, fontSize: "20px" }}
-              >
-                Advanced care. Personal attention. Peace of mind.
-              </p> */}
             </section>
 
             {/* Treatments Grid */}
