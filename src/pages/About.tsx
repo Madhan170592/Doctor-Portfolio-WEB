@@ -19,27 +19,17 @@ const About = () => {
 
             {/* Left Column - Text - comes SECOND on mobile */}
             <div className="order-2 md:order-1">
-              <div className="flex items-baseline justify-start flex-wrap">
+              <div className="flex items-baseline justify-start">
                 <h2
-                  style={{
-                    fontFamily: '"Work Sans", sans-serif',
-                    fontSize: "26px",
-                    color: "#1E5089",
-                    fontWeight: 395,
-                  }}
+                  className="text-[20px] sm:text-[26px] md:text-[32px] font-[395] font-sans text-[#1E5089]"
+                  style={{ fontFamily: '"Work Sans", sans-serif' }}
                 >
                   Joshua Franklyn
                 </h2>
-                <span
-                  className="text-[17px] font-light ml-2"
-                  style={{ color: "#1E5089" }}
-                >
+                <span className="text-[14px] sm:text-[17px] ml-2 font-light text-[#1E5089]">
                   MS
                 </span>
-                <span
-                  className="text-[17px] font-light ml-1"
-                  style={{ color: "#1E5089" }}
-                >
+                <span className="text-[14px] sm:text-[17px] ml-1 font-light text-[#1E5089]">
                   FRCS
                 </span>
               </div>

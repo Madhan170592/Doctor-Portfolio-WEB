@@ -145,7 +145,7 @@ const InsuranceFees = () => {
               >
                 Frequently Asked Questions
               </h2>
-              <div>
+              {/* <div>
                 <p
                   className="mb-2 text-lg md:text-[20px] "
                   style={{
@@ -169,7 +169,7 @@ const InsuranceFees = () => {
                   covers your entire treatment and one appointment, so there are
                   no hidden costs and no surprises.{" "}
                 </p>
-              </div>
+              </div> */}
 
               <div className="space-y-4">
                 {faqItems.map((item, index) => (
