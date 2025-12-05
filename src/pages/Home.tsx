@@ -63,9 +63,9 @@ const Home = () => {
                   <img
                     src={heroImage}
                     alt="Dr. Joshua Franklyn"
-                    className="absolute inset-0 pl-3 w-full 
-             h-[330px] sm:h-[300px] md:h-[350px] lg:h-[350px]
-             object-cover object-[63%_center] md:object-center hero-image-custom"
+                    className="absolute inset-0 pl-3 w-full
+     h-screen sm:h-[300px] md:h-[350px] lg:h-[350px]
+     object-cover object-[63%_center] md:object-center hero-image-custom"
                   />
 
                   <div className="absolute inset-0 flex flex-col items-center text-center md:items-start md:text-left xl:pt-4 sm:pt-12 md:pt-10 md:mt-5 z-20 pl-0 md:pl-[12px] hero-text-adjust">
@@ -74,14 +74,15 @@ const Home = () => {
                       style={{ marginLeft: "0px" }}
                     >
                       <h1
-                        className="ml-[16px]  md:ml-0 text-[28px] sm:text-[30px] md:text-[60px]  font-light mb-2 leading-tight mt-[30px] sm:mt-0  flex items-center gap-2 whitespace-nowrap flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2"
+                        className="ml-[16px] md:ml-0 text-[24px] sm:text-[28px] md:text-[60px] font-light mb-2 leading-tight mt-[30px] sm:mt-0 flex items-center gap-2 whitespace-nowrap
+    text-center justify-center md:justify-start "
                         style={{
                           fontFamily: '"Work Sans", sans-serif',
                           color: "#1E5089",
                         }}
                       >
                         Joshua Franklyn
-                        <span className="text-[16px] sm:text-[18px] md:text-[20px] font-light text-[#1E5089] mt-2 md:mt-6">
+                        <span className="text-[14px] sm:text-[16px] md:text-[20px] font-light text-[#1E5089] mt-3">
                           MS FRCS
                         </span>
                       </h1>
@@ -140,7 +141,9 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="text-center md:text-left space-y-6 reveal pt-20 lg:pt-15 hero-General-adjust">
+
+                    {/* Desktop - Same position */}
+                    <div className="hidden md:block text-center md:text-left space-y-6 reveal pt-20 lg:pt-15 hero-General-adjust">
                       <h2
                         style={{
                           fontFamily: '"Work Sans", sans-serif',
@@ -173,8 +176,39 @@ const Home = () => {
                 </div>
               </div>
 
+              {/* Mobile - Separate section below hero */}
+              <div className="block md:hidden w-[95%] max-w-[1200px] mx-auto px-4 mt-8">
+                <div className="text-center space-y-6 reveal">
+                  <h2
+                    style={{
+                      fontFamily: '"Work Sans", sans-serif',
+                      fontSize: "26px",
+                      color: "#1E5089",
+                      fontWeight: 395,
+                    }}
+                  >
+                    General and Colorectal Surgery services
+                  </h2>
+
+                  <p
+                    className="text-[14px] sm:text-[15px]"
+                    style={{
+                      color: "#612512",
+                      fontFamily: '"Montserrat", sans-serif',
+                      opacity: 0.8,
+                    }}
+                  >
+                    Mr Joshua Franklyn is a consultant General and Colorectal
+                    Surgeon working in Hertfordshire and Oxfordshire.{" "}
+                    <span>Mr. Franklyn</span> believes in building a strong,
+                    trusting relationship with each patient, ensuring you feel
+                    heard and cared for throughout your treatment while
+                    receiving timely, effective care.
+                  </p>
+                </div>
+              </div>
+
               {/* Content Area - General and Colorectal Surgery Services */}
-              {/* <div className="w-[95%] max-w-[1200px] mx-auto pl-[12px]   "> */}
               <div className="w-[95%] max-w-[1200px] mx-auto pl-[12px] hero-margin-fix">
                 {/* Profile Image and Consultation Details */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 reveal items-center p-6 md:p-10 mt-8">
