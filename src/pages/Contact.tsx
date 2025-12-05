@@ -99,13 +99,51 @@ const Contact = () => {
         <div className="w-[95%] max-w-[1200px] mx-auto">
           <div className="pl-[12px]">
             {/* Banner */}
-            <div className="overflow-hidden mb-6">
+            {/* <div className="overflow-hidden mb-6">
               <img
                 src={contactImage}
                 alt="Contact Banner"
                 className="w-full h-[350px] object-cover object-center"
               />
-            </div>
+            </div> */}
+
+{/* Banner */}
+<div className="relative overflow-hidden mb-6">
+  <img
+    src={contactImage}
+    alt="Contact Banner"
+    className="w-full h-[350px] object-cover object-center"
+  />
+
+
+ 
+
+</div>
+<div></div>
+<div className="bottom-4 flex flex-col md:flex-row gap-6 md:gap-16 mt-8">
+  {/* Phone */}
+  <div className="flex items-center gap-2">
+    <Phone className="text-[#1E5089]" />
+    <a
+      href="tel:+441234567890"
+      className="text-[#1E5089] font-medium hover:underline"
+    >
+      +44 1234 567890
+    </a>
+  </div>
+
+  {/* Email */}
+  <div className="flex items-center gap-2">
+    <Mail className="text-[#1E5089]" />
+    <a
+      href="mailto:contact@joshuafranklyn.co.uk"
+      className="text-[#1E5089] font-medium hover:underline"
+    >
+      contact@joshuafranklyn.co.uk
+    </a>
+  </div>
+</div>
+
 
             {/* Two maps side by side */}
             <section className="py-16">
