@@ -26,10 +26,10 @@ const Home = () => {
   }, []);
 
   const hospitals = [
-    {
-      name: "Foscote Hospital",
-      link: "https://thefoscotehospital.co.uk/enquire-online/",
-    },
+    // {
+    //   name: "Foscote Hospital",
+    //   link: "https://thefoscotehospital.co.uk/enquire-online/",
+    // },
     {
       name: "Spire Harpenden Hospital",
       link: "https://www.spirehealthcare.com/spire-harpenden-hospital/how-to-book/",
