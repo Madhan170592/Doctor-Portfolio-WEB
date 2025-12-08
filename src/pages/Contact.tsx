@@ -99,51 +99,39 @@ const Contact = () => {
         <div className="w-[95%] max-w-[1200px] mx-auto">
           <div className="pl-[12px]">
             {/* Banner */}
-            {/* <div className="overflow-hidden mb-6">
+
+            {/* Banner */}
+            <div className="relative overflow-hidden mb-6">
               <img
                 src={contactImage}
                 alt="Contact Banner"
                 className="w-full h-[350px] object-cover object-center"
               />
-            </div> */}
+            </div>
+            <div></div>
+            <div className="bottom-4 flex flex-col md:flex-row gap-6 md:gap-16 mt-8">
+              {/* Phone */}
+              <div className="flex items-center gap-2">
+                <Phone className="text-[#1E5089]" />
+                <a
+                  href="tel:01295 584620"
+                  className="text-[#1E5089] font-medium hover:underline"
+                >
+                  01295 584620
+                </a>
+              </div>
 
-{/* Banner */}
-<div className="relative overflow-hidden mb-6">
-  <img
-    src={contactImage}
-    alt="Contact Banner"
-    className="w-full h-[350px] object-cover object-center"
-  />
-
-
- 
-
-</div>
-<div></div>
-<div className="bottom-4 flex flex-col md:flex-row gap-6 md:gap-16 mt-8">
-  {/* Phone */}
-  <div className="flex items-center gap-2">
-    <Phone className="text-[#1E5089]" />
-    <a
-      href="tel:+441234567890"
-      className="text-[#1E5089] font-medium hover:underline"
-    >
-      +44 1234 567890
-    </a>
-  </div>
-
-  {/* Email */}
-  <div className="flex items-center gap-2">
-    <Mail className="text-[#1E5089]" />
-    <a
-      href="mailto:contact@joshuafranklyn.co.uk"
-      className="text-[#1E5089] font-medium hover:underline"
-    >
-      contact@joshuafranklyn.co.uk
-    </a>
-  </div>
-</div>
-
+              {/* Email */}
+              <div className="flex items-center gap-2">
+                <Mail className="text-[#1E5089]" />
+                <a
+                  href="mailto:mrfranklyn@theclinic.co.uk"
+                  className="text-[#1E5089] font-medium hover:underline"
+                >
+                  mrfranklyn@theclinic.co.uk
+                </a>
+              </div>
+            </div>
 
             {/* Two maps side by side */}
             <section className="py-16">
@@ -159,67 +147,25 @@ const Contact = () => {
                   Find Us
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* 🏥 The New Foscote Hospital */}
+                <div className="w-full">
+                  {/* 🏥 Spire Harpenden Hospital */}
                   <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
                     {/* Desktop - Bing Maps */}
-                    <div className="hidden md:block w-full h-full">
+                    {/* <div className="hidden md:block w-full h-full">
                       <iframe
-                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-                        width="100%"
+                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        width="200%"
                         height="100%"
                         style={{ border: 0 }}
                         scrolling="no"
                         allowFullScreen={true}
                         loading="lazy"
-                        title="The New Foscote Hospital Map"
+                        title="Spire Harpenden Hospital Map"
                       />
-                    </div>
-
-                    {/* Mobile - Google Maps */}
-                    <div className="block md:hidden w-full h-full">
+                    </div> */}
+                    <div className="hidden md:block w-full h-[500px]">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.123456789012!2d-1.330978!3d52.053349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDAzJzEyLjEiTiAxwrAxOSc1MS41Ilc!5e0!3m2!1sen!2suk!4v1234567890"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen={true}
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="The New Foscote Hospital Map"
-                      />
-                    </div>
-
-                    <div className="bg-white py-3 text-center">
-                      <a
-                        href="https://thefoscotehospital.co.uk/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-lg font-semibold text-[#1E5089] hover:underline hover:text-[#25576b] transition-colors"
-                      >
-                        <p
-                          className="text-center"
-                          style={{
-                            fontWeight: 300,
-                            color: "#1E5089",
-                            fontSize: "17px",
-                          }}
-                        >
-                          The New Foscote Hospital
-                        </p>
-                      </a>
-                      <p className="text-sm text-gray-600">
-                        Banbury, United Kingdom
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* 🏥 Spire Harpenden Hospital */}
-                  <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
-                    {/* Desktop - Bing Maps */}
-                    <div className="hidden md:block w-full h-full">
-                      <iframe
-                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        src="https://www.bing.com/maps/embed?h=500&w=1920&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
