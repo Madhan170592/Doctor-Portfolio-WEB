@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Dr. Joshua Franklyn | Consultant General & Colorectal Surgeon',
+  title = 'Joshua Franklyn | Consultant General & Colorectal Surgeon',
   description = 'Expert consultant surgeon specializing in robotic colorectal surgery, hernia repair, and advanced bowel treatments. Precision. Innovation. Compassion.',
   keywords = 'colorectal surgeon, robotic surgery, hernia repair, bowel cancer, IBD treatment, colonoscopy, London surgeon, consultant surgeon',
   canonical,

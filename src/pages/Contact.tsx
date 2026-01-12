@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Clock, Phone } from "lucide-react";
+import { Mail, MapPin, Clock, Phone, Link, Linkedin } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -17,6 +17,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import contactImage from "@/assets/contactus.png";
+import whatsapp from "@/assets/whatsapp.png";
+import WhatsAppWidget from "@/components/Layout/WhatsAppWidget";
+
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100),
@@ -125,10 +128,39 @@ const Contact = () => {
               <div className="flex items-center gap-2">
                 <Mail className="text-[#1E5089]" />
                 <a
-                  href="mailto:mrfranklyn@theclinic.co.uk"
+                  href="mailto:contact@joshuafranklyn.co.uk"
                   className="text-[#1E5089] font-medium hover:underline"
                 >
-                  mrfranklyn@theclinic.co.uk
+                  contact@joshuafranklyn.co.uk
+                </a>
+              </div>
+              {/* Linkedin */}
+              <div className="flex items-center gap-2">
+                <Linkedin className="text-[#1E5089]" />
+                <a
+                  href="https://www.linkedin.com/in/joshua-franklyn-a9477742/"
+                  className="text-[#1E5089] font-medium hover:underline"
+                >
+                  Joshua Franklyn
+                </a>
+              </div>
+
+              {/* Whatsapp */}
+              <div className="flex items-center gap-2">
+
+                <img
+                  src={whatsapp}
+                  alt="logo"
+                  className="text-[#1E5089]"
+                  style={{ height: 24, width: 24 }}
+                />
+                <a
+                  href="https://api.whatsapp.com/send/?phone=447438714828&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1E5089] font-medium hover:underline"
+                >
+                  +447438714828
                 </a>
               </div>
             </div>
@@ -147,25 +179,67 @@ const Contact = () => {
                   Find Us
                 </p>
 
-                <div className="w-full">
-                  {/* 🏥 Spire Harpenden Hospital */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* 🏥 The New Foscote Hospital */}
                   <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
                     {/* Desktop - Bing Maps */}
-                    {/* <div className="hidden md:block w-full h-full">
+                    <div className="hidden md:block w-full h-full">
                       <iframe
-                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
-                        width="200%"
+                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=52.053349~-1.330978&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        width="100%"
                         height="100%"
                         style={{ border: 0 }}
                         scrolling="no"
                         allowFullScreen={true}
                         loading="lazy"
-                        title="Spire Harpenden Hospital Map"
+                        title="The New Foscote Hospital Map"
                       />
-                    </div> */}
-                    <div className="hidden md:block w-full h-[500px]">
+                    </div>
+
+                    {/* Mobile - Google Maps */}
+                    <div className="block md:hidden w-full h-full">
                       <iframe
-                        src="https://www.bing.com/maps/embed?h=500&w=1920&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.123456789012!2d-1.330978!3d52.053349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDAzJzEyLjEiTiAxwrAxOSc1MS41Ilc!5e0!3m2!1sen!2suk!4v1234567890"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="The New Foscote Hospital Map"
+                      />
+                    </div>
+
+                    <div className="bg-white py-3 text-center">
+                      <a
+                        href="https://thefoscotehospital.co.uk/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg font-semibold text-[#1E5089] hover:underline hover:text-[#25576b] transition-colors"
+                      >
+                        <p
+                          className="text-center"
+                          style={{
+                            fontWeight: 300,
+                            color: "#1E5089",
+                            fontSize: "17px",
+                          }}
+                        >
+                          The New Foscote Hospital
+                        </p>
+                      </a>
+                      <p className="text-sm text-gray-600">
+                        Banbury, United Kingdom
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 🏥 Spire Harpenden Hospital */}
+                  <div className="overflow-hidden shadow-2xl h-[500px] flex flex-col">
+                    {/* Desktop - Bing Maps */}
+                    <div className="hidden md:block w-full h-full">
+                      <iframe
+                        src="https://www.bing.com/maps/embed?h=450&w=800&cp=51.828018~-0.360145&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -219,6 +293,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      {/* <WhatsAppWidget /> */}
     </main>
   );
 };
